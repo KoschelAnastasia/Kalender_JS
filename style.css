@@ -1,68 +1,37 @@
 body {
     background-color: #F7FAFF;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:"kopf kopf"
-                        "kalenderblatt infotext"
-                        "kalenderblatt geschichte"
-                        "titel titel"
-                        "foto foto"
-                        "fuss fuss"
-        }
-.buttonwochenende, .buttontag {
-padding-top: 4px;
-padding-right: 10px;
-padding-bottom: 6px;
-padding-left: 10px;
-text-align: center;
-font-family: Trebuchet MS;
-font-size: 15pt;
-border-style: none;
-    }
+    grid-template-columns: 1fr 3fr 0.5fr;
+    grid-template-areas:"kopf kopf kopf"
+    "kalenderblatt infotext platz"
+    "kalenderblatt geschichte platz"
+    "titel titel titel"
+    "foto foto foto"
+    "fuss fuss fuss"
+}
 
 .buttonlinksmonat, .buttonrechtsmonat, .buttonlinksjahr, .buttonrechtsmonat {
-padding-top: 10px;
-padding-right: 10px;
-padding-bottom: 10px;
-padding-left: 10px;
 text-align: center;
 background-color: #F7FAFF;   
-border-style: none;
-    }
-#infotext {
-grid-area: infotext;
-margin-left: 6pt;
-border-style:unset;
-border-color: #82229A;
-
-
-    }
+    
+}
 #foto {
 grid-area: foto;
-    }       
-#Jahr {
-text-align: center;
-padding-top: 10px;
-padding-right: 5px;
-padding-bottom: 10px;
-padding-left: 5px;
-text-align: center;
-background-color:#F7FAFF;
-font-size: 20pt;
-            }   
-h1, .title {
+}       
+#geschichte {
+grid-area: geschichte;
+margin-left: 6pt;
+margin-top: 0pt;
+margin-bottom: 80pt;
+border-bottom: groove #581845;
+text-align: justify;
+}
+h1 {
 color: #581845;
 font-size: 30pt;
 font-family: Trebuchet MS;
 text-align: center;
-                }
-h1, table, tr,th, td, .buttonlinksmonat, .buttonrechtsmonat, .buttonlinksjahr, .buttonrechtsmonat{
-padding-top: 10px;
-padding-right: 10px;
-padding-bottom: 10px;
-padding-left: 10px;
-text-align: center; 
-                    }
+    }
 h2 {
 color: #581845;
 font-size: 20pt;
@@ -75,71 +44,101 @@ font-size: 15pt;
 font-family: Trebuchet MS;
 text-align: left;
     }
-#geschichte {
-grid-area: geschichte; 
-}
-
+.title {
+color: #581845;
+font-size: 30pt;
+font-family: Trebuchet MS;
+text-align: center;
+    }
+th {
+min-width: 50pt;
+text-align: center; 
+color: black;
+font-size: 20pt;
+    }        
+td {
+height: 30pt;
+text-align: center; 
+border-style: none;
+color: black;
+font-size: 15pt;
+font-family: Trebuchet MS;
+    }       
+.tag {
+border-color: #f0ccf7;
+border-style: groove;
+background-color:#F7FAFF;
+font-size: 20pt;
+    }
+#titel {
+grid-area: titel;
+text-align: center;
+    }
+thead  {
+border-style: groove;
+border-color:  #82229A;  
+    }     
+table {
+margin-top: 70pt;
+}    
+#infotext {
+grid-area: infotext;
+margin-left: 6pt;
+margin-top: 50pt;
+margin-bottom: 10pt;
+border-bottom: groove #581845;
+text-align: justify;
+    }
+#Jahr {
+text-align: center;
+padding-top: 10px;
+padding-right: 5px;
+padding-bottom: 10px;
+padding-left: 5px;
+text-align: center;
+background-color: #F2E7F4;
+font-size: 20pt;
+    }   
 #kopf{
 grid-area: kopf;
 margin: 3pt 5pt 3pt 5pt;    
     }
 #kalenderblatt {
 grid-area: kalenderblatt;
-margin: 100pt 120pt 100pt 120pt;
+margin: 120pt 120pt 160pt 120pt;
     }
-    
-li, p {
+li {
 font-size: 15pt;
 font-family: Trebuchet MS;   
 }
 #Monat {
-    text-align: center;
-    background-color:#F7FAFF ;
-    font-size: 20pt;
-        }
-                
-.tag {
-border-color: #F2E7F4;
-border-style: groove;
-background-color:#F7FAFF;
-font-size: 20pt;
-
-    }
-.buttontag {
-background-color: #F7FAFF;    
-    }
-        
-#titel {
-grid-area: titel;
 text-align: center;
-    }
-th {
-color: black;
+background-color:#F7FAFF ;
 font-size: 20pt;
-    }
-td {
-border-style: none;
-color: black;
+        }        
+.monatundjahr {
+border: 3px solid #581845;    
+height: 50;
+background-color: #F2E7F4;
+}
+p {
 font-size: 15pt;
-font-family: Trebuchet MS;
-text-align: center;
-    }       
+font-family: Trebuchet MS;   
+}
+.samstag, .sonntag {
+background-color: #82229A;
+border-style: groove;   
+    }  
 .wochentagen {
-background-color: #F6E4FB;
+background-color: #FCF8FD; 
+border-style: groove;
+border-color: #82229A;
+height: 30pt;
+min-width: 50pt;
     }
 .samstagbuchstaben, .sonntagbuchstaben {
 background-color: #82229A;
     }
-.samstag, .sonntag, .buttonwochenende {
-background-color: #F7FAFF;
-    }
-.samstag, .sonntag {
-border-style: groove;
-border-color: #82229A;    
-}
-
-#obenereihe {
-border-style: groove;
-border-color:  #82229A;   
-   }     
-           
+.lmonat, .nmonat {
+color: gray;
+}           
