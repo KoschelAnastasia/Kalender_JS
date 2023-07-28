@@ -1,4 +1,8 @@
+
+
 body {
+    min-width: 460px;
+
     background-color: #F7FAFF;
     display: grid;
     grid-template-columns: 1fr 3fr 0.5fr;
@@ -18,11 +22,12 @@ body {
 
 @media only screen and (max-width: 900px) {
 body {
-    display: grid;
+    display: block;
+    margin: 0px;
     padding-top: 2%;
     padding-bottom: 2%;    
     padding-left: 2%;
-    padding-right: 2%;
+    padding-right: 2%; 
     grid-template-columns: 1fr 3fr 0.5fr;
     grid-template-areas:"kopf kopf kopf"
                         "kalenderblatt infotext platz"
@@ -33,27 +38,42 @@ body {
 
 }
 
-
 table {
+    margin: 40px 0px 40px -7px; 
+    padding: 5pt;
     width: auto;
-    padding: auto;
-
+    height: auto;
 }
+
 #kalenderblatt {
+    margin: 40px 0px 40px -7px; 
+    padding: 5pt;
     width: auto;
-    padding: auto;
+    height: auto;
+    }
+th{
+max-width: 20pt;
+}
+td{
+max-height: 15pt;
 }
 #infotext {
+    margin: 40px 0px 40px -7px;
     width: auto;
-    padding: auto;
+    height: auto;
+    
 }
 #geschichte {
+    margin: 40px 0px 40px -7px;
     width: auto;
-    padding: auto;
+    height: auto;
+    
 }
 #foto{
+    margin: 40px 0px 40px -7px;
     width: auto;
-    padding: auto;
+    height: auto;
+    
 }
 }
 
