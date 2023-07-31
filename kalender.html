@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
+        <!-- HTML mit CSS verbunden. -->
         <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
+        <!-- Mit hilfe "meta charset" tag, wird richtige Zeichencodierung für HTML, damit Zeichen im Inhalt korrekt interpretieren werden könnten -->
+        <meta charset="UTF-8"> 
+        <!-- "meta name" Tag, steuert die Größe und Form des Ansichtsfensters, ihre Eigenschaften werden in CSS genau beschrieben -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kalender vom 24.07.2023</title>
         <style>
@@ -10,13 +13,16 @@
         
     </head>
     <body>
+        <!-- Überschrift -->
     <div id="kopf">
         <h1>Kalender vom <span id="date"></span>.<span id="month">.</span>.<span id="year"></span></h1>
     </div>
+    <!-- border-collapse: collapse hat meine Problem mit border für Monat und Jahr in Kalendar gelöst, ohne ihm wird nur die oberste Teil von border ganz Oben gezeigt-->
     <table id="kalenderblatt" style="border-collapse: collapse;">
         <thead class="monatundjahr">
+            <!-- Das Attribut colspan (deutsch: Spalte überspannen) erlaubt es, eine Tabellenzelle nach rechts über mehrere Spalten auszudehnen -->
+            <!-- Alle th in diesen tr bilden die obere Tabellezellen mit Monat und Jahr in Kalendar -->
             <tr colspan="7">
-                
                 
                 <th><button type="submit" class="buttonlinksmonat">L</button></th>
                 <th id="Monat">Juli</th>
@@ -29,7 +35,7 @@
             </tr>
                     </thead>
                     <tbody> 
-                        
+                        <!-- Alle th in diesen tr bilden die mittlere Tabellezellen mit Wochentagen in Kalendar -->
                         <tr>
                             <th class="wochentagen"> Mo</th>
                             <th class="wochentagen">Di</th>
@@ -39,6 +45,7 @@
                             <th class="wochentagen samstagbuchstaben">Sa</th>
                             <th class="wochentagen sonntagbuchstaben">So</th>
                         </tr>
+                        <!-- Alle td in weiteren tr bilden die alle andere Tabellezellen mit Tagen in Kalendar -->
                         <tr>
                             <td class="tag lmonat">26</td>
                             <td class="tag lmonat">27</td>
@@ -98,11 +105,12 @@
                 </tbody>
                     
             </table>
-          
+          <!-- Inhalt dieses divs hat eine Beschreibung des Tages, ist mit hilfe von js interaktiv geworden und zeigt aktuelle Information -->
             <div id="infotext">
-                <h2 colspan="8">INFORMATION</h2>
+                <h2>INFORMATION</h2>
                 <p>Der <span id="infoDate"></span>. <span id="infoMonth"></span> <span id="infoYear"></span> ist ein <span id="infoWeekday"></span> und zwar der <span id="infoWeekday2"></span> im Monat <span id="infoMonth2"></span> des Jahres <span id="infoYear2"></span>. Es handelt sich um einen gesetzlichen Feiertag</p>
             </div>
+            <!-- Inhalt dieses divs hat ein Überblick in die Geschichte, zeigt besondere Eregnise die in bestimten Tag geschehen-->
             <div id="geschichte">    
                 <h2>Historische Ereignise</h2>
                 <li>1177: In einem Treffen in Venedig schließen unter Vermittlung des Dogen Sebastiano Ziani Kaiser Friedrich Barbarossa und Papst Alexander III. einen Frieden unter Einschluss der Lega lombarda, des oberitalienischen Städtebundes.</li>
@@ -114,12 +122,14 @@
                 <li>1943: Die Operation Gomorrha, die Zerstörung Hamburgs durch alliierte Luftangriffe, beginnt.</li>
                 <li>1959: Vor laufenden Fernsehkameras äußern sich der sowjetische Ministerpräsident Nikita Chruschtschow und US-Vizepräsident Richard Nixon in der Küchendebatte in Moskau über Vor- und Nachteile des Kommunismus und des Kapitalismus.</li>
             </div>
+            <!-- Inhalt dieses divs solte in die Zukunft Fotos zeigen, die besondere Eregnise die in bestimten Tag ilustrieren sollen-->
             <div id="titel">
                 <h1 class="titel">Fotos und Bilder</h1>
             </div>
             <div id="foto">
                 
             </div>
+            <!-- HTML mit Js verbunden -->
             <script src="kalendar.js"></script>
         </body>
             </html>        

@@ -1,8 +1,8 @@
 
-
+/* In Body würde die minimale Bildschirmauflösung, Hintergrundfarbe bestimt. Mithilfe grid-template-areas wird Bildschirm in bestimte Zonen verteilt. */
+/* Bildschirm hat 3 Columns (die mithilfe von grid-template-columns bestimte Breite hat) und 6 Zeilen*/
 body {
     min-width: 460px;
-
     background-color: #F7FAFF;
     display: grid;
     grid-template-columns: 1fr 3fr 0.5fr;
@@ -19,7 +19,8 @@ body {
       background-color: lightblue;
     }
   } */
-
+/* Meta Tag in CSS gibt  das Wert für Größe und Form des Ansichtsfensters, verschibt Infotext, Überblick in die geschichte und Fotos unter die Kalendar*/
+/* Bestimmt wie Groß wird "padding" (für jedes Element) auf die Geräten, dessen Bildschirmbreite weniger als 900px ist */
 @media only screen and (max-width: 900px) {
 body {
     display: block;
@@ -76,7 +77,7 @@ max-height: 15pt;
     
 }
 }
-
+/* Unten wird Beschrieben welche Farbe, Schriftart, Schriftgröße und andere Details im Kalenderstil */
 .buttonlinksmonat, .buttonrechtsmonat, .buttonlinksjahr, .buttonrechtsmonat {
     text-align: center;
     background-color: #F7FAFF;        
