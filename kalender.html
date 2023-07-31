@@ -5,41 +5,41 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kalender vom 24.07.2023</title>
-        <script src="kalendar.js"></script>
         <style>
         </style>
         
     </head>
-        <div id="kopf">
-            <h1>Kalender vom <span id="date" ></span> </h1>
-        </div>
-        <table id="kalenderblatt" style="border-collapse: collapse;">
-                    <thead class="monatundjahr">
-                        <tr colspan="7">
-                        
-                        
-                            <th><button type="submit" class="buttonlinksmonat">L</button></th>
-                            <th id="Monat">Juli</th>
-                            <th><button type="submit" class="buttonrechtsmonat">R</button></th>
-                            <th></th>
-                            <th><button type="submit" class="buttonlinksjahr">L</button></th>
-                            <th id="Jahr">2023</th>
-                            <th><button type="submit" class="buttonrechtsmonat">R</button></th>
-                            
-                        </tr>
+    <body>
+    <div id="kopf">
+        <h1>Kalender vom <span id="date"></span>.<span id="month">.</span>.<span id="year"></span></h1>
+    </div>
+    <table id="kalenderblatt" style="border-collapse: collapse;">
+        <thead class="monatundjahr">
+            <tr colspan="7">
+                
+                
+                <th><button type="submit" class="buttonlinksmonat">L</button></th>
+                <th id="Monat">Juli</th>
+                <th><button type="submit" class="buttonrechtsmonat">R</button></th>
+                <th></th>
+                <th><button type="submit" class="buttonlinksjahr">L</button></th>
+                <th id="Jahr">2023</th>
+                <th><button type="submit" class="buttonrechtsmonat">R</button></th>
+                
+            </tr>
                     </thead>
-                <tbody> 
-
-                    <tr>
-                        <th class="wochentagen"> Mo</th>
-                        <th class="wochentagen">Di</th>
-                        <th class="wochentagen">Mi</th>
-                        <th class="wochentagen">Do</th>
-                        <th class="wochentagen">Fr</th>
-                        <th class="wochentagen samstagbuchstaben">Sa</th>
-                        <th class="wochentagen sonntagbuchstaben">So</th>
-                    </tr>
-                    <tr>
+                    <tbody> 
+                        
+                        <tr>
+                            <th class="wochentagen"> Mo</th>
+                            <th class="wochentagen">Di</th>
+                            <th class="wochentagen">Mi</th>
+                            <th class="wochentagen">Do</th>
+                            <th class="wochentagen">Fr</th>
+                            <th class="wochentagen samstagbuchstaben">Sa</th>
+                            <th class="wochentagen sonntagbuchstaben">So</th>
+                        </tr>
+                        <tr>
                             <td class="tag lmonat">26</td>
                             <td class="tag lmonat">27</td>
                             <td class="tag lmonat">28</td>
@@ -47,31 +47,31 @@
                             <td class="tag lmonat">30</td>
                             <td class="tag samstag">1</td>
                             <td class="tag sonntag">2</td>
-                        
-                    </tr>
-                    <tr>
-                        <td class="tag">3</td>
-                        <td class="tag">4</td>
-                        <td class="tag">5</td>
-                        <td class="tag">6</td>
-                        <td class="tag">7</td>
-                        <td class="tag samstag">8</td>
-                        <td class="tag sonntag">9</td>
-                    </tr>
-                    <tr>
-                        <td class="tag">10</td>
-                        <td class="tag">11</td>
-                        <td class="tag">12</td>
-                        <td class="tag">13</td>
-                        <td class="tag">14</td>
-                        <td class="tag samstag">15</td>
-                        <td class="tag sonntag">16</td>
-                    </tr>
-                    <tr>
-                        <td class="tag">17</td>
-                        <td class="tag">18</td>
-                        <td class="tag">19</td>
-                        <td class="tag">20</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="tag">3</td>
+                            <td class="tag">4</td>
+                            <td class="tag">5</td>
+                            <td class="tag">6</td>
+                            <td class="tag">7</td>
+                            <td class="tag samstag">8</td>
+                            <td class="tag sonntag">9</td>
+                        </tr>
+                        <tr>
+                            <td class="tag">10</td>
+                            <td class="tag">11</td>
+                            <td class="tag">12</td>
+                            <td class="tag">13</td>
+                            <td class="tag">14</td>
+                            <td class="tag samstag">15</td>
+                            <td class="tag sonntag">16</td>
+                        </tr>
+                        <tr>
+                            <td class="tag">17</td>
+                            <td class="tag">18</td>
+                            <td class="tag">19</td>
+                            <td class="tag">20</td>
                         <td class="tag">21</td>
                         <td class="tag samstag">22</td>
                         <td class="tag sonntag">23</td>
@@ -94,30 +94,33 @@
                         <td class="tag nmonat samstag">5</td>
                         <td class="tag nmonat sonntag">6</td>
                     </tr>
-                
+                    
                 </tbody>
                     
             </table>
           
-        <div id="infotext">
-            <h2 colspan="8">INFORMATION</h2>
-            <p>Der 21.07.2023 ist ein Freitag und zwar der 3. Freitag im Monat Juli des Jahres 2023. Es handelt sich nicht um einen gesetzlichen Feiertag</p>
-        </div>
-        <div id="geschichte">    
-            <h2>Historische Ereignise</h2>
-            <li>1177: In einem Treffen in Venedig schließen unter Vermittlung des Dogen Sebastiano Ziani Kaiser Friedrich Barbarossa und Papst Alexander III. einen Frieden unter Einschluss der Lega lombarda, des oberitalienischen Städtebundes.</li>
-            <li>1245: Papst Innozenz IV. setzt den portugiesischen König Sancho II. ab und ernennt dessen Bruder Alfons III. zum Regenten.</li>        
-            <li>1534: Der französische Entdecker Jacques Cartier erreicht die Mündung des Sankt-Lorenz-Stromes und nimmt auf der Halbinsel Gaspésie das Gebiet für die französische Krone in Besitz.</li>
-            <li>1699: Von Johann Philipp von Isenburg-Offenbach aufgenommene hugenottische Glaubensflüchtlinge aus Frankreich gründen Neu-Isenburg.</li>
-            <li>1759: Im Franzosen- und Indianerkrieg können die Briten ein zum Entsatz des Forts Niagara angerücktes französisches Heer in der Schlacht bei La Belle Famille besiegen. Die französische Besatzung des strategisch bedeutsamen Forts kapituliert am folgenden Tag.</li>
-            <li>1868: In der Schweiz entsteht in der Frauenbewegung die erste internationale Frauenrechtsorganisation. Die Genferin Marie Goegg-Pouchoulin gründet die Association internationale des femmes.</li>
-            <li>1943: Die Operation Gomorrha, die Zerstörung Hamburgs durch alliierte Luftangriffe, beginnt.</li>
-            <li>1959: Vor laufenden Fernsehkameras äußern sich der sowjetische Ministerpräsident Nikita Chruschtschow und US-Vizepräsident Richard Nixon in der Küchendebatte in Moskau über Vor- und Nachteile des Kommunismus und des Kapitalismus.</li>
-        </div>
-        <div id="titel">
-            <h1 class="titel">Fotos und Bilder</h1>
-        </div>
-        <div id="foto">
-
-        </div>
-</html>        
+            <div id="infotext">
+                <h2 colspan="8">INFORMATION</h2>
+                <p>Der <span id="infoDate"></span>. <span id="infoMonth"></span> <span id="infoYear"></span> ist ein <span id="infoWeekday"></span> und zwar der <span id="infoWeekday2"></span> im Monat <span id="infoMonth2"></span> des Jahres <span id="infoYear2"></span>. Es handelt sich um einen gesetzlichen Feiertag</p>
+            </div>
+            <div id="geschichte">    
+                <h2>Historische Ereignise</h2>
+                <li>1177: In einem Treffen in Venedig schließen unter Vermittlung des Dogen Sebastiano Ziani Kaiser Friedrich Barbarossa und Papst Alexander III. einen Frieden unter Einschluss der Lega lombarda, des oberitalienischen Städtebundes.</li>
+                <li>1245: Papst Innozenz IV. setzt den portugiesischen König Sancho II. ab und ernennt dessen Bruder Alfons III. zum Regenten.</li>        
+                <li>1534: Der französische Entdecker Jacques Cartier erreicht die Mündung des Sankt-Lorenz-Stromes und nimmt auf der Halbinsel Gaspésie das Gebiet für die französische Krone in Besitz.</li>
+                <li>1699: Von Johann Philipp von Isenburg-Offenbach aufgenommene hugenottische Glaubensflüchtlinge aus Frankreich gründen Neu-Isenburg.</li>
+                <li>1759: Im Franzosen- und Indianerkrieg können die Briten ein zum Entsatz des Forts Niagara angerücktes französisches Heer in der Schlacht bei La Belle Famille besiegen. Die französische Besatzung des strategisch bedeutsamen Forts kapituliert am folgenden Tag.</li>
+                <li>1868: In der Schweiz entsteht in der Frauenbewegung die erste internationale Frauenrechtsorganisation. Die Genferin Marie Goegg-Pouchoulin gründet die Association internationale des femmes.</li>
+                <li>1943: Die Operation Gomorrha, die Zerstörung Hamburgs durch alliierte Luftangriffe, beginnt.</li>
+                <li>1959: Vor laufenden Fernsehkameras äußern sich der sowjetische Ministerpräsident Nikita Chruschtschow und US-Vizepräsident Richard Nixon in der Küchendebatte in Moskau über Vor- und Nachteile des Kommunismus und des Kapitalismus.</li>
+            </div>
+            <div id="titel">
+                <h1 class="titel">Fotos und Bilder</h1>
+            </div>
+            <div id="foto">
+                
+            </div>
+            <script src="kalendar.js"></script>
+        </body>
+            </html>        
+            
