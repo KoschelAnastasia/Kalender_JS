@@ -64,13 +64,26 @@ function holidays () {
 //Zueignung einer ID zu Variablen, damit die in HTML aufgerufen werden können
     document.getElementById(`infoHoliday`).innerHTML = holidayYesNoD;
 }
+//Ein Algorithmus zum Zählen von Wiederholungen von Wochentagen
 function wIMonth () {
-    let date = new Date();
-    let weekdayD = date.getDay ();
-    const weekDayName = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    let weekDayInfo = (weekDayName[weekdayD]);
+//Konstanten, die deffinieren wert von Heutigen Tag und Wochentag
+    const date = new Date();
+    const dateD = date.getDate();
+    const weekdayD = date.getDay ();
+
+ //Matematische Formel funkzionirt auf folgende Weise:
+ //dateD hat wert von heutigen Tag. weekdayD hat wert von Wochentag (wo: 0 ist Sonntag, 1 ist Montag usw)
+ //Matimatische Formel berechnet Differenz zwischen heutigen Tag und heutigen Wochentag und addiert 10
+ //10 wird addiert, damit ich die Fälle berüchsichtigen kann, wenn wert von heutigen Tag kleiner als wert von heutigen Wochentag ist,
+ // um negative Ergebnis zu vermeiden. Dann wird Ergebnis durch 7 geteilt, um "Runde" Zahl in Ergebnis zu bekommen, wird hier .floor Methode verwendet 
+ //Mithilfe Methode .floor wird die Ergebnis nach unten "gerundet"   
+    let numberOfWeekday = Math.floor ((dateD - weekdayD +10) / 7);
+
+    document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
+}
+
+    
     
 
-console.log (weekDayInfo);
 
-}
+
