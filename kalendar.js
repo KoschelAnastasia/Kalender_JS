@@ -5,6 +5,7 @@ window.onload= function() {
     holidays();
     wIMonth ();
     monthYearView ();
+    allDays ();
 }
 //Funktion für oberes Überschrift
 function überschrift()
@@ -87,6 +88,7 @@ function wIMonth () {
         
 }
 function monthYearView (){
+
     let date = new Date();
     let monthD = date.getMonth();
     const monthHead = ["Januar", "Februar", "März", "April ", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
@@ -94,5 +96,78 @@ function monthYearView (){
     let year = date.getFullYear ();
     
     document.getElementById(`headMonth`).textContent = todayMonth;
-    dokument.getElementById(`headYear`).innerHTML = year;
+    document.getElementById(`headYear`).innerHTML = year;
+
 }
+
+function allDays () {
+    daysTag = document.querySelector(".tag");
+    let date = new Date();
+    let monthD = date.getMonth();
+    let year = date.getFullYear ();
+    
+    let lastDayOfMonth = new Date(year, monthD +1, 0).getDate();
+    let tdTag = "";
+    for (let i=1; i<=lastDayOfMonth; i++) {
+        tdTag +=`<td>${i}</td>`;
+    }
+    daysTag.innerHTML = tdTag;
+    console.log(lastDayOfMonth);
+}
+
+// <tr class ="tag"></tr>
+//                          <tr>
+//                             <td class="tag lmonat">26</td>
+//                             <td class="tag lmonat">27</td>
+//                             <td class="tag lmonat">28</td>
+//                             <td class="tag lmonat">29</td>
+//                             <td class="tag lmonat">30</td>
+//                             <td class="tag samstag">1</td>
+//                             <td class="tag sonntag">2</td>
+                            
+//                         </tr>
+//                         <tr>
+//                             <td class="tag">3</td>
+//                             <td class="tag">4</td>
+//                             <td class="tag">5</td>
+//                             <td class="tag">6</td>
+//                             <td class="tag">7</td>
+//                             <td class="tag samstag">8</td>
+//                             <td class="tag sonntag">9</td>
+//                         </tr>
+//                         <tr>
+//                             <td class="tag">10</td>
+//                             <td class="tag">11</td>
+//                             <td class="tag">12</td>
+//                             <td class="tag">13</td>
+//                             <td class="tag">14</td>
+//                             <td class="tag samstag">15</td>
+//                             <td class="tag sonntag">16</td>
+//                         </tr>
+//                         <tr>
+//                             <td class="tag">17</td>
+//                             <td class="tag">18</td>
+//                             <td class="tag">19</td>
+//                             <td class="tag">20</td>
+//                         <td class="tag">21</td>
+//                         <td class="tag samstag">22</td>
+//                         <td class="tag sonntag">23</td>
+//                     </tr>
+//                     <tr>
+//                         <td class="tag">24</td>
+//                         <td class="tag">25</td>
+//                         <td class="tag">26</td>
+//                         <td class="tag">27</td>
+//                         <td class="tag">28</td>
+//                         <td class="tag samstag">29</td>
+//                         <td class="tag sonntag">30</td>
+//                     </tr>
+//                     <tr>
+//                         <td class="tag">31</td>
+//                         <td class="tag nmonat">1</td>
+//                         <td class="tag nmonat">2</td>
+//                         <td class="tag nmonat">3</td>
+//                         <td class="tag nmonat">4</td>
+//                         <td class="tag nmonat samstag">5</td>
+//                         <td class="tag nmonat sonntag">6</td>
+//                     </tr> 

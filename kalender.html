@@ -18,18 +18,18 @@
         <h1>Kalender vom <span id="date"></span>.<span id="month">.</span>.<span id="year"></span></h1>
     </div>
     <!-- border-collapse: collapse hat meine Problem mit border für Monat und Jahr in Kalendar gelöst, ohne ihm wird nur die oberste Teil von border ganz Oben gezeigt-->
-    <table id="kalenderblatt" style="border-collapse: collapse;">
+    <table class="calender-container" id="kalenderblatt" style="border-collapse: collapse;">
         <thead class="monatundjahr">
             <!-- Das Attribut colspan (deutsch: Spalte überspannen) erlaubt es, eine Tabellenzelle nach rechts über mehrere Spalten auszudehnen -->
             <!-- Alle th in diesen tr bilden die obere Tabellezellen mit Monat und Jahr in Kalendar -->
             <tr colspan="7">
                 
                 <th><button type="submit" class="buttonlinksmonat">L</button></th>
-                <th id="Monat">Juli</th>
+                <th id="Monat"><span id="headMonth"></th>
                 <th><button type="submit" class="buttonrechtsmonat">R</button></th>
                 <th></th>
                 <th><button type="submit" class="buttonlinksjahr">L</button></th>
-                <th id="Jahr">2023</th>
+                <th id="Jahr"><span id="headYear"></span></th>
                 <th><button type="submit" class="buttonrechtsmonat">R</button></th>
                 
             </tr>
@@ -46,7 +46,8 @@
                             <th class="wochentagen sonntagbuchstaben">So</th>
                         </tr>
                         <!-- Alle td in weiteren tr bilden die alle andere Tabellezellen mit Tagen in Kalendar -->
-                        <tr>
+                        <tr class ="tag"></tr>
+                         <tr>
                             <td class="tag lmonat">26</td>
                             <td class="tag lmonat">27</td>
                             <td class="tag lmonat">28</td>
@@ -100,7 +101,7 @@
                         <td class="tag nmonat">4</td>
                         <td class="tag nmonat samstag">5</td>
                         <td class="tag nmonat sonntag">6</td>
-                    </tr>
+                    </tr> 
                     
                 </tbody>
                     
@@ -132,6 +133,5 @@
             <!-- HTML mit Js verbunden -->
             <script src="kalendar.js"></script>
         </body>
-            </html>      
-            //  
+            </html>        
             
