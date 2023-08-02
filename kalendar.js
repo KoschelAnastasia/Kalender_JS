@@ -4,6 +4,7 @@ window.onload= function() {
     kalendarInfotext();
     holidays();
     wIMonth ();
+    monthYearView ();
 }
 //Funktion für oberes Überschrift
 function überschrift()
@@ -84,4 +85,14 @@ function wIMonth () {
         const numberOfWeekday = Math.ceil ((dateD -firstWeekdayOfMonth.getDate() + weekdayD)/7);
         document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
         
+}
+function monthYearView (){
+    let date = new Date();
+    let monthD = date.getMonth();
+    const monthHead = ["Januar", "Februar", "März", "April ", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    let todayMonth = (monthHead[monthD]);
+    let year = date.getFullYear ();
+    
+    document.getElementById(`headMonth`).textContent = todayMonth;
+    dokument.getElementById(`headYear`).innerHTML = year;
 }
