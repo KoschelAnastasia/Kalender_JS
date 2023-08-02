@@ -67,31 +67,21 @@ function holidays () {
 //Ein Algorithmus zum Zählen von Wiederholungen von Wochentagen
 function wIMonth () {
 //Konstanten, die deffinieren wert von Heutigen Tag und Wochentag
-
-const date = new Date();
-const dateD = date.getDate();
-const weekdayD = date.getDay ();
-
+    const date = new Date();
+    const dateD = date.getDate();
+    const weekdayD = date.getDay ();
+    const firstWeekdayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+//While Schleife sucht erste Tag in Monat der gleiche Wochen Tag hat wie weekdayD    
+    while (firstWeekdayOfMonth.getDate() !== weekdayD){
+        firstWeekdayOfMonth.setDate(firstWeekdayOfMonth.getDate()+1)
+    }
 //Matematische Formel funkzionirt auf folgende Weise:
 //dateD hat wert von heutigen Tag. weekdayD hat wert von Wochentag (wo: 0 ist Sonntag, 1 ist Montag usw)
-//Matimatische Formel berechnet Differenz zwischen heutigen Tag und heutigen Wochentag und addiert 10
-//10 wird addiert, damit ich die Fälle berüchsichtigen kann, wenn wert von heutigen Tag kleiner als wert von heutigen Wochentag ist,
-// um negative Ergebnis zu vermeiden. Dann wird Ergebnis durch 7 geteilt, um "Runde" Zahl in Ergebnis zu bekommen, wird hier .floor Methode verwendet 
-//Mithilfe Methode .floor wird die Ergebnis nach unten "gerundet"   
-let numberOfWeekday = Math.floor ((dateD - weekdayD +10) / 7);
-//Bedingung if für Ergebnise die nach dem rundung gleich 0. Wenn nummberOfWeekday weniger als 1, dann wird nummberOfWeekday gleich 1.   
-if (numberOfWeekday < 1){
-    numberOfWeekday = 1;
+//firstWeekdayOfMonth hat wert von erste Tag in Monat der gleiche Wochen Tag hat wie weekdayD
+//Matimatische Formel berechnet Differenz zwischen dateD und firstWeekdayOfMonth und addiert weekdayD.
+//Dann wird Ergebnis durch 7 geteilt, um "Runde" Zahl in Ergebnis zu bekommen, wird hier .ceil Methode verwendet 
+//Mithilfe Methode .ceil wird die Ergebnis immer nach oben "gerundet"   
+        const numberOfWeekday = Math.ceil ((dateD -firstWeekdayOfMonth.getDate() + weekdayD)/7);
+        document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
+        
 }
-
-document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
-}
-
-
-//  const date = 1;
-//  const dateD = 1;
-//  const weekdayD = 5;
-    
-
-
-
