@@ -18,25 +18,23 @@
         <h1>Kalender vom <span id="date"></span>.<span id="month">.</span>.<span id="year"></span></h1>
     </div>
     <!-- border-collapse: collapse hat meine Problem mit border für Monat und Jahr in Kalendar gelöst, ohne ihm wird nur die oberste Teil von border ganz Oben gezeigt-->
-    <table class="calender-container" id="kalenderblatt" style="border-collapse: collapse;">
+    <table  style="border-collapse: collapse;">
         <thead class="monatundjahr">
-            <!-- Das Attribut colspan (deutsch: Spalte überspannen) erlaubt es, eine Tabellenzelle nach rechts über mehrere Spalten auszudehnen -->
             <!-- Alle th in diesen tr bilden die obere Tabellezellen mit Monat und Jahr in Kalendar -->
-            <tr colspan="7">
+            
                 
-                <th><button type="submit" class="buttonlinksmonat">L</button></th>
-                <th id="Monat"><span id="headMonth"></th>
-                <th><button type="submit" class="buttonrechtsmonat">R</button></th>
+                <th><button type="submit" id="buttonlinksmonat">L</button></th>
+                <th id="monat"></th>
+                <th><button type="submit" id="buttonrechtsmonat">R</button></th>
                 <th></th>
-                <th><button type="submit" class="buttonlinksjahr">L</button></th>
-                <th id="Jahr"><span id="headYear"></span></th>
-                <th><button type="submit" class="buttonrechtsmonat">R</button></th>
+                <th><button type="submit" id="buttonlinksjahr">L</button></th>
+                <th id="jahr"></th>
+                <th><button type="submit" id="buttonrechtjahr">R</button></th>
                 
-            </tr>
+            
                     </thead>
-                    <tbody> 
+                    
                         <!-- Alle th in diesen tr bilden die mittlere Tabellezellen mit Wochentagen in Kalendar -->
-                        <tr>
                             <th class="wochentagen"> Mo</th>
                             <th class="wochentagen">Di</th>
                             <th class="wochentagen">Mi</th>
@@ -44,66 +42,10 @@
                             <th class="wochentagen">Fr</th>
                             <th class="wochentagen samstagbuchstaben">Sa</th>
                             <th class="wochentagen sonntagbuchstaben">So</th>
-                        </tr>
                         <!-- Alle td in weiteren tr bilden die alle andere Tabellezellen mit Tagen in Kalendar -->
-                        <tr class ="tag"></tr>
-                         <tr>
-                            <td class="tag lmonat">26</td>
-                            <td class="tag lmonat">27</td>
-                            <td class="tag lmonat">28</td>
-                            <td class="tag lmonat">29</td>
-                            <td class="tag lmonat">30</td>
-                            <td class="tag samstag">1</td>
-                            <td class="tag sonntag">2</td>
-                            
-                        </tr>
-                        <tr>
-                            <td class="tag">3</td>
-                            <td class="tag">4</td>
-                            <td class="tag">5</td>
-                            <td class="tag">6</td>
-                            <td class="tag">7</td>
-                            <td class="tag samstag">8</td>
-                            <td class="tag sonntag">9</td>
-                        </tr>
-                        <tr>
-                            <td class="tag">10</td>
-                            <td class="tag">11</td>
-                            <td class="tag">12</td>
-                            <td class="tag">13</td>
-                            <td class="tag">14</td>
-                            <td class="tag samstag">15</td>
-                            <td class="tag sonntag">16</td>
-                        </tr>
-                        <tr>
-                            <td class="tag">17</td>
-                            <td class="tag">18</td>
-                            <td class="tag">19</td>
-                            <td class="tag">20</td>
-                        <td class="tag">21</td>
-                        <td class="tag samstag">22</td>
-                        <td class="tag sonntag">23</td>
-                    </tr>
-                    <tr>
-                        <td class="tag">24</td>
-                        <td class="tag">25</td>
-                        <td class="tag">26</td>
-                        <td class="tag">27</td>
-                        <td class="tag">28</td>
-                        <td class="tag samstag">29</td>
-                        <td class="tag sonntag">30</td>
-                    </tr>
-                    <tr>
-                        <td class="tag">31</td>
-                        <td class="tag nmonat">1</td>
-                        <td class="tag nmonat">2</td>
-                        <td class="tag nmonat">3</td>
-                        <td class="tag nmonat">4</td>
-                        <td class="tag nmonat samstag">5</td>
-                        <td class="tag nmonat sonntag">6</td>
-                    </tr> 
+                        <div id="kalenderblatt"></div>
                     
-                </tbody>
+                
                     
             </table>
           <!-- Inhalt dieses divs hat eine Beschreibung des Tages, ist mithilfe von js interaktiv geworden und zeigt aktuelle Information -->

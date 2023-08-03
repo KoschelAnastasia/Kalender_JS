@@ -78,7 +78,7 @@ max-height: 15pt;
 }
 }
 /* Unten wird Beschrieben welche Farbe, Schriftart, Schriftgröße und andere Details im Kalenderstil */
-.buttonlinksmonat, .buttonrechtsmonat, .buttonlinksjahr, .buttonrechtsmonat {
+#buttonlinksmonat, #buttonrechtsmonat, #buttonlinksjahr, #buttonrechtsjahr {
     text-align: center;
     background-color: #F7FAFF;        
 }
@@ -126,34 +126,34 @@ th {
     color: black;
     font-size: 20pt;
     }        
-td {
+.tag {
+    border-color: #f0ccf7;
+    grid-template-columns: repeat(7, 1fr);
+    border-style: groove;
+    background-color:#F7FAFF;
+    width: 50pt;
     height: 30pt;
     text-align: center; 
-    border-style: none;
     color: black;
     font-size: 15pt;
     font-family: Trebuchet MS;
-    }       
-.tag {
-    border-color: #f0ccf7;
-    border-style: groove;
-    background-color:#F7FAFF;
-    font-size: 20pt;
     }
 #titel {
     grid-area: titel;
     text-align: center;
-    }
-thead  {
-    border-style: groove;
-    border-color:  #82229A;  
-    }     
+    }  
 table {
     grid-area: kalenderblatt;
     padding: 30pt 100pt 30pt 100pt;
     margin: 135pt 100pt 120pt 100pt;
     height: 200pt;
 }    
+#table {
+    grid-area: kalenderblatt;
+    padding: 30pt 100pt 30pt 100pt;
+    margin: 135pt 100pt 120pt 100pt;
+    height: 200pt;
+}   
 #infotext {
     grid-area: infotext;
     margin-left: 6pt;
@@ -163,7 +163,7 @@ table {
     text-align: justify;
     padding-bottom: 15px;
     }
-#Jahr {
+#jahr {
     text-align: center;
     padding-top: 10px;
     padding-right: 5px;
@@ -185,7 +185,7 @@ li {
     font-size: 15pt;
     font-family: Trebuchet MS;   
 }
-#Monat {
+#monat {
     text-align: center;
     background-color:#F2E7F4 ;
     font-size: 20pt;
@@ -209,6 +209,7 @@ p {
     border-color: #82229A;
     height: 30pt;
     min-width: 50pt;
+    grid-template-columns: repeat(7, 1fr);
     }
 .samstagbuchstaben, .sonntagbuchstaben {
     background-color: #82229A;
