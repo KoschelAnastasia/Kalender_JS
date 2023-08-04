@@ -78,9 +78,14 @@ max-height: 15pt;
 }
 }
 /* Unten wird Beschrieben welche Farbe, Schriftart, Schriftgröße und andere Details im Kalenderstil */
-#buttonlinksmonat, #buttonrechtsmonat, #buttonlinksjahr, #buttonrechtsjahr {
+#buttonlinksmonat, #buttonrechtsmonat, #buttonlinksjahr, #buttonrechtjahr {
     text-align: center;
-    background-color: #F7FAFF;        
+    background-color: #F7FAFF;     
+    height: 30px;
+    width: 40px;
+    grid-template-columns: repeat(7, 1fr);
+    border: groove #581845 1px;
+
 }
 
 #foto {
@@ -179,7 +184,10 @@ table {
     }
 #kalenderblatt {
     grid-area: kalenderblatt;
-    padding: 60pt 100pt 60pt 100pt;
+    padding: 5pt 10pt 5pt 10pt;
+    margin: 15pt 10pt 15pt 15pt;
+    height: 200pt;
+    
     }
 li {
     font-size: 15pt;
@@ -189,11 +197,12 @@ li {
     text-align: center;
     background-color:#F2E7F4 ;
     font-size: 20pt;
-        }        
+}        
 .monatundjahr {
     border: 3px solid #581845;    
     height: 50;
     background-color: #F2E7F4;
+    grid-template-columns: repeat(7, 1fr);
 }
 p {
     font-size: 15pt;
@@ -209,12 +218,20 @@ p {
     border-color: #82229A;
     height: 30pt;
     min-width: 50pt;
-    grid-template-columns: repeat(7, 1fr);
     }
-.samstagbuchstaben, .sonntagbuchstaben {
+/* .samstagbuchstaben, .sonntagbuchstaben {
     background-color: #82229A;
-    }
+    } */
 .lmonat, .nmonat {
     color: gray;
-}       
+}  
+.gridHead {
+    grid-template-columns:repeat(7, 1fr);
+    display: grid;
+    border: 3px groove #581845;
+}
+.gridWochentag {
+    grid-template-columns:repeat(7, 1fr);
+    display: grid;
+}     
 /*  */

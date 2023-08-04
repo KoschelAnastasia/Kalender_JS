@@ -115,7 +115,10 @@ function calenderSheet () {
     let year = date.getFullYear ();
 
     //get ID für Kalender aufbau (Monat, Jahr, button)
-    let colenderBody = document.getElementById("kalenderblatt");
+    let calenderBody = document.getElementById("kalenderblatt");
+    calenderBody.style.display = "grid";
+    calenderBody.style.gridTemplateColumns = "repeat(7, 1fr)";
+
 
     let monthElement = document.getElementById(`monat`);
     let yearElement = document.getElementById(`jahr`);
@@ -161,20 +164,20 @@ function calenderSheet () {
         yearElement.textContent = (date.getFullYear());
 
         //Operation, die löscht Inhalt, befor ein neues zu schreiben
-        colenderBody.innerHTML = "";
+        calenderBody.innerHTML = "";
 
         //Zuerst wird es eine Funktion für leere Zellen sein (die vor anfang des Monats stehen), aber später wird es die Zahlen des Vor- und nächsten Monats
         for (let i =1; i < firstDayOfWeek; i++) {
             const emptyCell = tagCellCreator("");
-            colenderBody.appendChild(emptyCell);
+            calenderBody.appendChild(emptyCell);
         }
         for (let tag = 1; tag <= allDayInMonth; tag ++) {
             const tagCell = tagCellCreator(tag);
-            colenderBody.appendChild(tagCell);
+            calenderBody.appendChild(tagCell);
         }
         for (let i = lastDayOfWeek; i < 7; i++) {
             const emptyCell = tagCellCreator("");
-            colenderBody.appendChild(emptyCell);
+            calenderBody.appendChild(emptyCell);
         }
     }
     
@@ -187,6 +190,7 @@ function calenderSheet () {
         return tagCell;
 
     }
+    calenderRender ();
     
 }
 // //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.

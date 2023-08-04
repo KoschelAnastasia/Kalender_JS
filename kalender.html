@@ -17,37 +17,35 @@
     <div id="kopf">
         <h1>Kalender vom <span id="date"></span>.<span id="month">.</span>.<span id="year"></span></h1>
     </div>
-    <!-- border-collapse: collapse hat meine Problem mit border für Monat und Jahr in Kalendar gelöst, ohne ihm wird nur die oberste Teil von border ganz Oben gezeigt-->
-    <table  style="border-collapse: collapse;">
-        <thead class="monatundjahr">
-            <!-- Alle th in diesen tr bilden die obere Tabellezellen mit Monat und Jahr in Kalendar -->
+    <!-- -->
+    <div>
+            <!--  -->
             
-                
-                <th><button type="submit" id="buttonlinksmonat">L</button></th>
-                <th id="monat"></th>
-                <th><button type="submit" id="buttonrechtsmonat">R</button></th>
-                <th></th>
-                <th><button type="submit" id="buttonlinksjahr">L</button></th>
-                <th id="jahr"></th>
-                <th><button type="submit" id="buttonrechtjahr">R</button></th>
-                
-            
-                    </thead>
+                <div class="gridHead">
+                <button type="submit" id="buttonlinksmonat">L</button>
+                <div id="monat"></div>
+                <button type="submit" id="buttonrechtsmonat">R</button>
+                <div></div>
+                <button type="submit" id="buttonlinksjahr">L</button>
+                <div id="jahr"></div>
+                <button type="submit" id="buttonrechtjahr">R</button>
+                </div>    
+                <!-- -->
+                <div class="gridWochentag">
+                <div class="wochentagen">Mo</div>
+                <div class="wochentagen">Di</div>
+                <div class="wochentagen">Mi</div>
+                <div class="wochentagen">Do</div>
+                <div class="wochentagen">Fr</div>
+                <div class="wochentagen">Sa</div>
+                <div class="wochentagen">So</div>
+                </div>
+                <!-- -->
                     
-                        <!-- Alle th in diesen tr bilden die mittlere Tabellezellen mit Wochentagen in Kalendar -->
-                            <th class="wochentagen"> Mo</th>
-                            <th class="wochentagen">Di</th>
-                            <th class="wochentagen">Mi</th>
-                            <th class="wochentagen">Do</th>
-                            <th class="wochentagen">Fr</th>
-                            <th class="wochentagen samstagbuchstaben">Sa</th>
-                            <th class="wochentagen sonntagbuchstaben">So</th>
-                        <!-- Alle td in weiteren tr bilden die alle andere Tabellezellen mit Tagen in Kalendar -->
-                        <div id="kalenderblatt"></div>
-                    
+                <div id="kalenderblatt"></div>    
                 
                     
-            </table>
+                </div>
           <!-- Inhalt dieses divs hat eine Beschreibung des Tages, ist mithilfe von js interaktiv geworden und zeigt aktuelle Information -->
             <div id="infotext">
                 <h2>INFORMATION</h2>
