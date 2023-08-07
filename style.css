@@ -33,13 +33,6 @@ body {
 
 }
 
-table {
-    margin: 40px 0px 40px -7px; 
-    padding: 5pt;
-    width: auto;
-    height: auto;
-}
-
 #kalenderblatt {
     margin: 40px 0px 40px -7px; 
     padding: 5pt;
@@ -71,9 +64,12 @@ max-height: 15pt;
     
 }
 }
-/* */
+/* Die linke Monats Taste. Von oben nach unten: Höhe in pixel; Breite in pixel; Begrenzung; Schriftstil; obere und rechte Einzug 
+in pixel; Rundung die Ecken von Begrenzung; Schriftgroße; Versetzung einen flexiblen Container-Modus, der das Flexbox-Layout verwendet;
+justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers zu steuern;
+align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen Containers zu steuern
+Hintergrundfarbe; Verwendung von Schaten*/
 #buttonLinksMonat {
-    text-align: center; 
     height: 30px;
     width: 40px;
     border: none;
@@ -89,7 +85,8 @@ max-height: 15pt;
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-#buttonrechtsmonat {
+/* Die rechte Monats Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
+#buttonRechtsMonat {
     height: 30px;
     width: 40px;
     border: none;
@@ -105,8 +102,8 @@ max-height: 15pt;
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-#buttonlinksjahr {
-    text-align: center;
+/* Die linke Jahr Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
+#buttonLinksJahr {
     height: 30px;
     width: 40px;
     border: none;
@@ -122,8 +119,8 @@ max-height: 15pt;
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-#buttonrechtjahr {
-    text-align: center;
+/* Die rechte Jahr Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
+#buttonRechtJahr {
     height: 30px;
     width: 40px;
     border: none;
@@ -139,10 +136,12 @@ max-height: 15pt;
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-
+/* Stil für Fotos */
 #foto {
     grid-area: foto;
 }       
+/* Geschichte Abschnit. Von oben nach unten: Posizionirung von Abschnit in "geschichte" Area; linke Einzug 
+in pixel; untere Begrenzung; */
 #geschichte {
     grid-area: geschichte;
     margin-left: 6pt;

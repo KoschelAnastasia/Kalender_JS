@@ -123,10 +123,10 @@ function calenderSheet () {
     let monthElement = document.getElementById(`monat`);
     let yearElement = document.getElementById(`jahr`);
 
-    let buttonLinksMonat = document.getElementById(`buttonlinksmonat`);
-    let buttonRechtsMonat = document.getElementById(`buttonrechtsmonat`);
-    let buttonLinksJahr = document.getElementById(`buttonlinksjahr`);
-    let buttonRechtJahr = document.getElementById(`buttonrechtjahr`);
+    let buttonLinksMonat = document.getElementById(`buttonLinksMonat`);
+    let buttonRechtsMonat = document.getElementById(`buttonRechtsMonat`);
+    let buttonLinksJahr = document.getElementById(`buttonLinksJahr`);
+    let buttonRechtJahr = document.getElementById(`buttonRechtJahr`);
 
     calenderRender ()
 
@@ -198,71 +198,7 @@ function calenderSheet () {
     // });
     
 }
-// //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.
-// const weekDayName = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-// let text = (weekDayName[weekdayD]);
-    // let tdTag = "";
-    // for (let i=1; i<=lastDayOfMonth; i++) {
-    //     // if (){}
-    //     tdTag +=`<td>${i}</td>`;
-    // }
-    // daysTag.innerHTML = tdTag;
-    // console.log(lastDayOfMonth);
-
-
-// <tr class ="tag"></tr>
-//                          <tr>
-//                             <td class="tag lmonat">26</td>
-//                             <td class="tag lmonat">27</td>
-//                             <td class="tag lmonat">28</td>
-//                             <td class="tag lmonat">29</td>
-//                             <td class="tag lmonat">30</td>
-//                             <td class="tag samstag">1</td>
-//                             <td class="tag sonntag">2</td>
-                            
-//                         </tr>
-//                         <tr>
-//                             <td class="tag">3</td>
-//                             <td class="tag">4</td>
-//                             <td class="tag">5</td>
-//                             <td class="tag">6</td>
-//                             <td class="tag">7</td>
-//                             <td class="tag samstag">8</td>
-//                             <td class="tag sonntag">9</td>
-//                         </tr>
-//                         <tr>
-//                             <td class="tag">10</td>
-//                             <td class="tag">11</td>
-//                             <td class="tag">12</td>
-//                             <td class="tag">13</td>
-//                             <td class="tag">14</td>
-//                             <td class="tag samstag">15</td>
-//                             <td class="tag sonntag">16</td>
-//                         </tr>
-//                         <tr>
-//                             <td class="tag">17</td>
-//                             <td class="tag">18</td>
-//                             <td class="tag">19</td>
-//                             <td class="tag">20</td>
-//                         <td class="tag">21</td>
-//                         <td class="tag samstag">22</td>
-//                         <td class="tag sonntag">23</td>
-//                     </tr>
-//                     <tr>
-//                         <td class="tag">24</td>
-//                         <td class="tag">25</td>
-//                         <td class="tag">26</td>
-//                         <td class="tag">27</td>
-//                         <td class="tag">28</td>
-//                         <td class="tag samstag">29</td>
-//                         <td class="tag sonntag">30</td>
-//                     </tr>
-//                     <tr>
-//                         <td class="tag">31</td>
-//                         <td class="tag nmonat">1</td>
-//                         <td class="tag nmonat">2</td>
-//                         <td class="tag nmonat">3</td>
-//                         <td class="tag nmonat">4</td>
 //                         <td class="tag nmonat samstag">5</td>
 //                         <td class="tag nmonat sonntag">6</td>
 //                     </tr> 
+
