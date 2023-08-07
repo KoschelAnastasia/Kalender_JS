@@ -5,7 +5,7 @@ window.onload= function() {
     holidays();
     wIMonth ();
     calenderSheet ();
-    // monthYearView ();
+    
 
 }
 
@@ -111,31 +111,32 @@ function calenderSheet () {
     //Variables für Datum
     letdaysTag = document.querySelector(".tag");
     let date = new Date();
-    let monthD = date.getMonth();
-    let year = date.getFullYear ();
-
+    
     //get ID für Kalender aufbau (Monat, Jahr, button)
     let calenderBody = document.getElementById("kalenderblatt");
     calenderBody.style.display = "grid";
     calenderBody.style.gridTemplateColumns = "repeat(7, 1fr)";
-
-
+    
+    
     let monthElement = document.getElementById(`monat`);
     let yearElement = document.getElementById(`jahr`);
-
+    
     let buttonLinksMonat = document.getElementById(`buttonLinksMonat`);
     let buttonRechtsMonat = document.getElementById(`buttonRechtsMonat`);
     let buttonLinksJahr = document.getElementById(`buttonLinksJahr`);
-    let buttonRechtJahr = document.getElementById(`buttonRechtJahr`);
-
-    calenderRender ()
-
+    let buttonRechtsJahr = document.getElementById(`buttonRechtsJahr`);
+    
+    calenderRender (date)
+    
     //Render Funktion    
-    function  calenderRender () {
-
+    function  calenderRender (date) {
+        let monthD = date.getMonth();
+        let year = date.getFullYear ();
+        
         //Erste und letzte Tag des Monats in Kalendar Kopf werden richtig geschrieben   
         const firstDayofMonth = new Date (year, monthD, 1);
         const lastDayOfMonth = new Date (year, monthD +1, 0);
+    
     
         //Variables, die gesamte Zahl von Tagen für bestimte Monat hat    
         let allDayInMonth = lastDayOfMonth.getDate();
@@ -157,7 +158,7 @@ function calenderSheet () {
         }
 
         //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.
-        const monthName = ["Januar", "Februar", "März", "April ", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+        const monthName = ["Jan.", "Feb.", "März", "Apr. ", "Mai", "Jun.", "Jul.", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."];
         let textMonth = (monthName[monthD]);
 
         monthElement.textContent = (textMonth);
@@ -172,6 +173,7 @@ function calenderSheet () {
             calenderBody.appendChild(emptyCell);
         }
         for (let tag = 1; tag <= allDayInMonth; tag ++) {
+            
             const tagCell = tagCellCreator(tag);
             calenderBody.appendChild(tagCell);
         }
@@ -187,18 +189,52 @@ function calenderSheet () {
         tagCell.classList.add("tag");
         tagCell.textContent = tag;
 
+        const date = new Date ();
+        date.setDate(tag);
+        if (date.getDay() == 0 || date.getDay() == 6) {
+            tagCell.classList.add("weekend");
+        }    
         return tagCell;
-
+        
     }
-    calenderRender ();
-
-    // buttonLinksMonat.addEventListener("click", function (){
-    //     date.setMonth(date.getMonth() -1);
-    //     calenderRender ();
-    // });
     
+    
+    
+    calenderRender (date);
+    
+    buttonLinksMonat.addEventListener("click", function (){
+        console.log(date);
+        date.setMonth(date.getMonth() -1);
+        calenderRender (date);    
+    });
+    buttonRechtsMonat.addEventListener ("click", function (){
+        date.setMonth(date.getMonth() +1);
+        calenderRender (date);
+    });
+    buttonLinksJahr.addEventListener("click", function(){
+        date.setFullYear(date.getFullYear() - 1);
+        calenderRender (date);
+    });
+    buttonRechtsJahr.addEventListener ("click", function(){
+        date.setFullYear(date.getFullYear() +1);
+        calenderRender (date);
+    });
+    
+    // function weekendColors () {
+    //     const weekends = document.querySelectorAll(`.calenderRender`);
+    //     weekends.forEach( tag =>{
+        //         const date = new Date (tag.getAttribute(`date-date`));
+    //         if (date.getDay() == 6 || date.getDay() == 7) {
+        //             weekends.classList.add(`weekend`);
+        //         }
+    //     });
+    // }
 }
 //                         <td class="tag nmonat samstag">5</td>
 //                         <td class="tag nmonat sonntag">6</td>
 //                     </tr> 
 
+
+// else {
+//     tagCell.textContent = tag;
+// }

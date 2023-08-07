@@ -13,57 +13,6 @@ body {
                         "foto foto foto"
                         "fuss fuss fuss"
 }
-/* Meta Tag in CSS gibt  das Wert für Größe und Form des Ansichtsfensters, verschibt Infotext, Überblick in die geschichte und Fotos unter die Kalendar*/
-/* Bestimmt wie Groß wird "padding" (für jedes Element) auf die Geräten, dessen Bildschirmbreite weniger als 900px ist */
-@media only screen and (max-width: 900px) {
-body {
-    display: block;
-    margin: 0px;
-    padding-top: 2%;
-    padding-bottom: 2%;    
-    padding-left: 2%;
-    padding-right: 2%; 
-    grid-template-columns: 1fr 3fr 0.5fr;
-    grid-template-areas:"kopf kopf kopf"
-                        "kalenderblatt infotext platz"
-                        "kalenderblatt geschichte platz"
-                        "titel titel titel"
-                        "foto foto foto"
-                        "fuss fuss fuss"                     
-
-}
-
-#kalenderblatt {
-    margin: 40px 0px 40px -7px; 
-    padding: 5pt;
-    width: auto;
-    height: auto;
-    }
-th{
-max-width: 20pt;
-}
-td{
-max-height: 15pt;
-}
-#infotext {
-    margin: 40px 0px 40px -7px;
-    width: auto;
-    height: auto;
-    
-}
-#geschichte {
-    margin: 40px 0px 40px -7px;
-    width: auto;
-    height: auto;
-    
-}
-#foto{
-    margin: 40px 0px 40px -7px;
-    width: auto;
-    height: auto;
-    
-}
-}
 /* Die linke Monats Taste. Von oben nach unten: Höhe in pixel; Breite in pixel; Begrenzung; Schriftstil; obere und rechte Einzug 
 in pixel; Rundung die Ecken von Begrenzung; Schriftgroße; Versetzung einen flexiblen Container-Modus, der das Flexbox-Layout verwendet;
 justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers zu steuern;
@@ -120,7 +69,7 @@ Hintergrundfarbe; Verwendung von Schaten*/
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 /* Die rechte Jahr Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
-#buttonRechtJahr {
+#buttonRechtsJahr {
     height: 30px;
     width: 40px;
     border: none;
@@ -151,32 +100,34 @@ in pixel; untere Begrenzung; */
     text-align: justify;
     padding-bottom: 35px;
     padding-top: 5px;
-    height: 500px;
+    height: auto;
 }
 h1 {
-    color: #581845;
+    color: black;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
-    }
+    background-color: lavender;
+    border-radius: 5px;
+}
 h2 {
     color: #581845;
     font-size: 20pt;
     font-family: Trebuchet MS;
     text-align: auto;
-    }
+}
 h3 {
     color: black;
     font-size: 15pt;
     font-family: Trebuchet MS;
     text-align: left;
-    }
+}
 .title {
     color: #581845;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
-    }
+}
 .tag {
     border-color: #f0ccf7;
     border-style: groove;
@@ -191,21 +142,23 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+    margin-top: 3pt;
+    margin-bottom: 3pt;
+}
 #titel {
     grid-area: titel;
     text-align: center;
-    }  
+}  
 #infotext {
     grid-area: infotext;
     margin-left: 6pt;
-    margin-top: 50pt;
+    margin-top: 30pt;
     margin-bottom: 10pt;
     border-bottom: groove #581845;
     text-align: justify;
     padding-bottom: 15px;
-    height: 100px;
-    }
+    height: auto;
+}
 #jahr {
     padding-top: 10px;
     padding-right: 5px;
@@ -216,18 +169,30 @@ h3 {
     font-size: 20pt;
     font-family: Trebuchet MS;
     }   
-#kopf{
+    #kopf{
     grid-area: kopf;
     margin: 3pt 5pt 3pt 5pt;    
-    }
-#kalenderblatt {
+}
+.borderKalendar{
+    border: 3px groove #E1B8E8;
+    border-radius: 10px;
+    background-color: #F2E7F4;
+    overflow: hidden;
+    height: auto;
+    width: 450px;
+    margin-left: 120pt;
+    margin-top: 100pt;
+    margin-bottom: 120pt;
+    margin-right: 120pt;
+
+}
+.kalenderblatt {
     grid-area: kalenderblatt;
     /* border-collapse: collapse; */
      padding: 5pt 5pt 5pt 5pt; 
-    /* margin: 15pt 10pt 15pt 15pt; */
-    height: 200pt;
+     /* margin: 15pt 10pt 15pt 15pt; */
     gap: 0px;
-/* 
+    /* 
     padding: 5pt 5pt 5pt 5pt;
     margin: 1pt 1pt 1pt 1pt;
     height: 190pt;
@@ -235,8 +200,8 @@ h3 {
     width: 330pt; */
     
     }
-li {
-    font-size: 15pt;
+    li {
+        font-size: 15pt;
     font-family: Trebuchet MS;   
 }
 #monat {
@@ -255,8 +220,11 @@ p {
 }
 .wochenende {
     color: #C77FDC;
-    filter: brightness(80%);
-    }  
+    /* filter: brightness(80%); */
+}  
+.weekend {
+    color: #C77FDC;
+}
 .wochentagen {
     grid-template-columns: repeat(7, 1fr);
     height: 30pt;
@@ -270,7 +238,7 @@ p {
 }
 /* .samstagbuchstaben, .sonntagbuchstaben {
     background-color: #82229A;
-    } */
+} */
 
 .gridHead {
     grid-template-columns:repeat(7, 1fr);
@@ -284,17 +252,77 @@ p {
     border-top: 3px groove #E1B8E8;
     /* border-bottom: 3px groove #E1B8E8;  */
 }     
-.borderKalendar{
-    border: 3px groove #E1B8E8;
-    border-radius: 10px;
-    /* margin: 80pt 60pt 80pt 60pt; */
-    background-color: #F2E7F4;
-    overflow: hidden;
+/* Meta Tag in CSS gibt  das Wert für Größe und Form des Ansichtsfensters, verschibt Infotext, Überblick in die geschichte und Fotos unter die Kalendar*/
+/* Bestimmt wie Groß wird "padding" (für jedes Element) auf die Geräten, dessen Bildschirmbreite weniger als 900px ist */
+@media only screen and (max-width: 900px) {
+    body {
+        display: block;
+        margin: 0px;
+    padding-top: 2%;
+    padding-bottom: 2%;    
+    padding-left: 2%;
+    padding-right: 2%; 
+    grid-template-columns: 1fr 3fr 0.5fr;
+    grid-template-areas:"kopf kopf kopf"
+    "kalenderblatt infotext platz"
+                        "kalenderblatt geschichte platz"
+                        "titel titel titel"
+                        "foto foto foto"
+                        "fuss fuss fuss"                     
+
+                    }
+
+                    .kalenderblatt {
+    margin: 40px 0px 40px -7px; 
+    padding: 5pt;
     height: 400px;
-    width: 450px;
-    margin-left: 120pt;
-    margin-top: 100pt;
-    margin-right: 40pt;
+    width: 440px;
+    margin-left: 2pt;
+    margin-top: 30pt;
+    margin-right: 2pt;
+}
+h1 {
+    color: black;
+    font-size: 30pt;
+    font-family: Trebuchet MS;
+    text-align: center;
+    background-color: lavender;
+    border-radius: 25px;
+}
+.borderKalendar {
+    margin: 40px 0px 40px -7px; 
+    padding: 5pt;
+    height: auto;
+    width: auto;
+    margin-left: 2pt;
+    margin-top: 30pt;
+    margin-right: 2pt;
+}
+/* th{
+max-width: 20pt;
+}
+td{
+    max-height: 15pt;
+} */
+#infotext {
+    margin: 40px 2px 40px 2px;
+    width: auto;
+    height: auto;
+
+    
+}
+#geschichte {
+    margin: 40px 2px 40px 2px;
+    width: auto;
+    height: auto;
+    
+}
+#foto{
+    margin: 40px 2px 40px 2px;
+    width: auto;
+    height: auto;
+    
+}
 }
 /* .borgerKalender:nth-child(1){
     border: 3px groove #f0ccf7;
@@ -302,6 +330,6 @@ p {
 } */
 /* 
 passt gut für unaktive tagen
- color: #E6D2F7;
-    filter: brightness(80%);
+color: #E6D2F7;
+filter: brightness(80%);
 */
