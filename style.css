@@ -90,7 +90,8 @@ Hintergrundfarbe; Verwendung von Schaten*/
     grid-area: foto;
 }       
 /* Geschichte Abschnit. Von oben nach unten: Posizionirung von Abschnit in "geschichte" Area; linke Einzug 
-in pixel; untere Begrenzung; */
+in pixel; untere Begrenzung; text-align beschreibt wie horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers 
+zu steuern; Untere und Obere Enzug innerhalb von Objekt Grenze; die Höhe*/
 #geschichte {
     grid-area: geschichte;
     margin-left: 6pt;
@@ -102,6 +103,8 @@ in pixel; untere Begrenzung; */
     padding-top: 5px;
     height: auto;
 }
+/*Überschrifte "Kalender von" und "Fotos". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Zentrirung des Texstes
+Hintergrundfarbe; Rundung von Ecken */
 h1 {
     color: black;
     font-size: 30pt;
@@ -110,24 +113,25 @@ h1 {
     background-color: lavender;
     border-radius: 5px;
 }
+/* Überschriften "Information" und "Historische ...". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Text 
+wird automatisch auf die Seite verteilt */
 h2 {
     color: #581845;
     font-size: 20pt;
     font-family: Trebuchet MS;
     text-align: auto;
 }
-h3 {
-    color: black;
-    font-size: 15pt;
-    font-family: Trebuchet MS;
-    text-align: left;
-}
-.title {
+/* .title {
     color: #581845;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
-}
+} */
+/* Stil für Tagen in die Kalender. Von oben nach Unten: Begrenzungs Farbe; Begrenzungs Stil; Rundung die Begrenzungs
+Ecken; Hintergrundfarbe; Höhe und Breite; Schriftfarbe; Schriftgroße; Schriftstil; Versetzung einen flexiblen Container-Modus, 
+der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
+flexiblen Containers zu steuern; align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
+Containers zu steuern; Obere und Untere Einzug */
 .tag {
     border-color: #f0ccf7;
     border-style: groove;
@@ -138,7 +142,6 @@ h3 {
     color: black;
     font-size: 15pt;
     font-family: Trebuchet MS;
-    border-collapse: collapse;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,24 +183,15 @@ h3 {
     overflow: hidden;
     height: auto;
     width: 450px;
-    margin-left: 120pt;
-    margin-top: 100pt;
-    margin-bottom: 120pt;
-    margin-right: 120pt;
-
+    padding-bottom: 5px
 }
 .kalenderblatt {
     grid-area: kalenderblatt;
-    /* border-collapse: collapse; */
-     padding: 5pt 5pt 5pt 5pt; 
-     /* margin: 15pt 10pt 15pt 15pt; */
-    gap: 0px;
-    /* 
-    padding: 5pt 5pt 5pt 5pt;
-    margin: 1pt 1pt 1pt 1pt;
-    height: 190pt;
-    gap: 0px;
-    width: 330pt; */
+    margin-left: 120pt;
+    margin-top: 100pt;
+    margin-bottom: auto;
+    margin-right: 130pt;
+    padding-left: 5px
     
     }
     li {
@@ -288,15 +282,20 @@ h1 {
     text-align: center;
     background-color: lavender;
     border-radius: 25px;
+    width: 300pt;
 }
 .borderKalendar {
     margin: 40px 0px 40px -7px; 
     padding: 5pt;
     height: auto;
-    width: auto;
+    width: 300pt;
     margin-left: 2pt;
     margin-top: 30pt;
-    margin-right: 2pt;
+    margin-right: 0pt;
+}
+.kalenderblatt{
+    padding-left: 3px;
+    padding-right: 6pt;
 }
 /* th{
 max-width: 20pt;
@@ -305,21 +304,21 @@ td{
     max-height: 15pt;
 } */
 #infotext {
-    margin: 40px 2px 40px 2px;
-    width: auto;
+    /* margin: 40px 2px 40px 2px; */
+    width: 300pt;
     height: auto;
 
     
 }
 #geschichte {
-    margin: 40px 2px 40px 2px;
-    width: auto;
+    /* margin: 40px 2px 40px 2px; */
+    width: 300pt;
     height: auto;
     
 }
 #foto{
-    margin: 40px 2px 40px 2px;
-    width: auto;
+    /* margin: 40px 2px 40px 2px; */
+    width: 315pt;
     height: auto;
     
 }
