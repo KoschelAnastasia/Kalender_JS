@@ -200,17 +200,17 @@ function calenderSheet () {
 
             calenderBody.appendChild(tagCell);
 
-            // if (date === dateD && date === monthD && date === year){
-
-            //     todayCell = tagCellCreator(`today`);
+            // if (date == dateD && date == monthD && date == year){
+        
+            //     const todayCell = tagCellCreator(`today`);
             //     calenderBody.appendChild(todayCell);
-                
-                
             // }
-
+            
+            console.log("what is date" + date);
         }
-
-
+        
+        
+        
         //Eine Schleife die Zahlen des nächstes Monats definiert
         for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
             
@@ -218,9 +218,9 @@ function calenderSheet () {
             nextMonthDay.setDate(i);
             const emptyCell = tagCellCreator(nextMonthDay, `otherMonth`);
             calenderBody.appendChild(emptyCell);
-
+            
         }
-
+        
     }
     
     //Funktion, die "tag" Zelle erstellt
@@ -236,7 +236,7 @@ function calenderSheet () {
         tagCell.textContent = day2.getDate();
 
  
-        // if (today){
+        // if (today) {
 
         //     tagCell.classList.add("today");
         
