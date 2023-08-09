@@ -130,8 +130,11 @@ function calenderSheet () {
     
     //Render Funktion    
     function  calenderRender (date) {
+        
+        let dateD = date.getDate();
         let monthD = date.getMonth();
         let year = date.getFullYear ();
+        
         
         //Erste und letzte Tag des Monats in Kalendar Kopf werden richtig geschrieben   
         const firstDayofMonth = new Date (year, monthD, 1);
@@ -167,41 +170,103 @@ function calenderSheet () {
         //Operation, die löscht Inhalt, befor ein neues zu schreiben
         calenderBody.innerHTML = "";
 
-        //Zuerst wird es eine Funktion für leere Zellen sein (die vor anfang des Monats stehen), aber später wird es die Zahlen des Vor- und nächsten Monats
-        for (let i =1; i < firstDayOfWeek; i++) {
-            const emptyCell = tagCellCreator("");
-            calenderBody.appendChild(emptyCell);
-        }
+        //Konstanten die Datum für lezte Monat definieren
+        const prevMonth = new Date(year, monthD - 1, 1);
+        const prevMonthLastDay = new Date(year, monthD, 0);
+        const daysInPrevMonth = prevMonthLastDay.getDate();
+
+        //Konstanten die Datum für nächste Monat definieren
+        const nextMonth = new Date(year, monthD + 1, 1);
+
+        //
+        
+        //Eine Schleife die Zahlen des Vormonats definiert
+        for (let i = firstDayOfWeek - 1; i >= 1; i--) {
+                
+                const prevMonthDay = new Date(prevMonth);
+                prevMonthDay.setDate(daysInPrevMonth - i + 1);
+                const emptyCell = tagCellCreator(prevMonthDay, `otherMonth`);
+                calenderBody.appendChild(emptyCell);
+
+        }            
+        
+        
+        //Eine Schleife die Zahlen des aktueles Monats definiert
         for (let tag = 1; tag <= allDayInMonth; tag ++) {
-            
-            const tagCell = tagCellCreator(tag);
+
+            let day = new Date(date.getFullYear(), date.getMonth(), tag);
+
+            const tagCell = tagCellCreator(day);
+
             calenderBody.appendChild(tagCell);
+
+            // if (date === dateD && date === monthD && date === year){
+
+            //     todayCell = tagCellCreator(`today`);
+            //     calenderBody.appendChild(todayCell);
+                
+                
+            // }
+
         }
-        for (let i = lastDayOfWeek; i < 7; i++) {
-            const emptyCell = tagCellCreator("");
+
+
+        //Eine Schleife die Zahlen des nächstes Monats definiert
+        for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
+            
+            const nextMonthDay = new Date(nextMonth);
+            nextMonthDay.setDate(i);
+            const emptyCell = tagCellCreator(nextMonthDay, `otherMonth`);
             calenderBody.appendChild(emptyCell);
+
         }
+
     }
     
     //Funktion, die "tag" Zelle erstellt
-    function tagCellCreator (tag) {
-        const tagCell = document.createElement("div");
-        tagCell.classList.add("tag");
-        tagCell.textContent = tag;
 
-        const date = new Date ();
-        date.setDate(tag);
-        if (date.getDay() == 0 || date.getDay() == 6) {
-            tagCell.classList.add("weekend");
-        }    
-        return tagCell;
+    function tagCellCreator (day, otherMonth, today) {
+
+        let day2 = new Date(day);
+
+        const tagCell = document.createElement("div");
+
+        tagCell.classList.add("tag");
+
+        tagCell.textContent = day2.getDate();
+
+ 
+        // if (today){
+
+        //     tagCell.classList.add("today");
         
+        // }
+
+        if (otherMonth) {
+
+            tagCell.classList.add("otherMonth");
+        
+        }
+       
+
+        if (day2.getDay() == 0 || day2.getDay() == 6) {
+
+            tagCell.classList.add("weekend");
+
+        }    
+
+ 
+
+        return tagCell;
+
+       
+
     }
-    
     
     
     calenderRender (date);
     
+    //Botton
     buttonLinksMonat.addEventListener("click", function (){
         console.log(date);
         date.setMonth(date.getMonth() -1);
@@ -220,21 +285,5 @@ function calenderSheet () {
         calenderRender (date);
     });
     
-    // function weekendColors () {
-    //     const weekends = document.querySelectorAll(`.calenderRender`);
-    //     weekends.forEach( tag =>{
-        //         const date = new Date (tag.getAttribute(`date-date`));
-    //         if (date.getDay() == 6 || date.getDay() == 7) {
-        //             weekends.classList.add(`weekend`);
-        //         }
-    //     });
-    // }
 }
-//                         <td class="tag nmonat samstag">5</td>
-//                         <td class="tag nmonat sonntag">6</td>
-//                     </tr> 
 
-
-// else {
-//     tagCell.textContent = tag;
-// }

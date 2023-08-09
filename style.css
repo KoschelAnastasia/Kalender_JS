@@ -33,8 +33,11 @@ Hintergrundfarbe; Verwendung von Schaten*/
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(246, 235, 248);
+    background-color: rgb(116, 204, 207);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
 }
 
 
@@ -52,8 +55,9 @@ Hintergrundfarbe; Verwendung von Schaten*/
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(246, 235, 248);
+    background-color: rgb(116, 204, 207);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
 
@@ -71,8 +75,9 @@ Hintergrundfarbe; Verwendung von Schaten*/
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(246, 235, 248);
+    background-color: rgb(116, 204, 207);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
 
@@ -90,8 +95,9 @@ Hintergrundfarbe; Verwendung von Schaten*/
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(246, 235, 248);
+    background-color: rgb(116, 204, 207);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
 
@@ -109,7 +115,7 @@ zu steuern; Untere und Obere Enzug innerhalb von Objekt Grenze; die Höhe*/
     margin-left: 6pt;
     /* margin-top: 0pt;
     margin-bottom: 80pt; */
-    border-bottom: groove #581845;
+    border-bottom: groove rgb(25, 124, 128);
     text-align: justify;
     padding-bottom: 35px;
     padding-top: 5px;
@@ -120,11 +126,11 @@ zu steuern; Untere und Obere Enzug innerhalb von Objekt Grenze; die Höhe*/
 /*Überschrifte "Kalender von" und "Fotos". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Zentrirung des Texstes
 Hintergrundfarbe; Rundung von Ecken */
 h1 {
-    color: black;
+    color: white;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
-    background-color: lavender;
+    background-color: rgb(57, 150, 153);
     border-radius: 5px;
 }
 
@@ -132,10 +138,11 @@ h1 {
 /* Überschriften "Information" und "Historische ...". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Text 
 wird automatisch auf die Seite verteilt */
 h2 {
-    color: #581845;
+    color: rgb(25, 124, 128);
     font-size: 20pt;
     font-family: Trebuchet MS;
     text-align: auto;
+    
 }
 
 
@@ -153,8 +160,8 @@ der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft hori
 flexiblen Containers zu steuern; align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
 Containers zu steuern; Obere und Untere Einzug */
 .tag {
-    border-color: #f0ccf7;
-    border-style: groove;
+    border-color:rgb(80, 192, 196);
+    border-style: hidden;
     border-radius: 25%;
     background-color:#F7FAFF;
     width: 40pt;
@@ -167,6 +174,7 @@ Containers zu steuern; Obere und Untere Einzug */
     align-items: center;
     margin-top: 3pt;
     margin-bottom: 3pt;
+    font-weight: bold;
 }
 
 
@@ -185,7 +193,7 @@ zu steuern; untere Enzug innerhalb von Objekt Grenze; passende Höhe   */
     margin-left: 6pt;
     margin-top: 30pt;
     margin-bottom: 10pt;
-    border-bottom: groove #581845;
+    border-bottom: groove rgb(25, 124, 128);
     text-align: justify;
     padding-bottom: 15px;
     height: auto;
@@ -200,9 +208,10 @@ Zentrirung des Texstes; Hintergrundfarbe; Schriftgroße; Schriftstil*/
     padding-bottom: 10px;
     padding-left: 5px;
     text-align: center;
-    background-color: #F2E7F4;
+    background-color: rgb(116, 204, 207);
     font-size: 20pt;
     font-family: Trebuchet MS;
+    color: white;
     }
 
 
@@ -217,9 +226,9 @@ Zentrirung des Texstes; Hintergrundfarbe; Schriftgroße; Schriftstil*/
 Hintergrundfarbe; mit hilfe overflow: hidden wird den Hintergrundfarbe in Kalender box aufgepasst(gerundet), ohne diesen Mittel kann man 
 die Ecken von Hintergrund sehen; auto Höhe; Breite in pixel; untere Einzug in der Element; */
 .borderKalendar{
-    border: 3px groove #E1B8E8;
+    border: 3px groove rgb(80, 192, 196);
     border-radius: 10px;
-    background-color: #F2E7F4;
+    background-color: rgb(116, 204, 207);
     overflow: hidden;
     height: auto;
     width: 450px;
@@ -251,13 +260,14 @@ li {
 obere, rechte,untere, linke Einzug innerhalb des Elementes;*/
 #monat {
     text-align: center;
-    background-color:#F2E7F4 ;
+    background-color:rgb(116, 204, 207)2E7F4 ;
     font-size: 20pt;
     font-family: Trebuchet MS;
     padding-top: 10px;
     padding-right: 5px;
     padding-bottom: 10px;
     padding-left: 5px;
+    color: white;
 }
 
 
@@ -270,11 +280,12 @@ p {
 
 /*  */
 .wochenende {
-    color: #C77FDC;
+    color: white;
+    /* color: #c20404; */
     /* filter: brightness(80%); */
 }  
 .weekend {
-    color: #C77FDC;
+    color: rgb(25, 124, 128);
 }
 .wochentagen {
     grid-template-columns: repeat(7, 1fr);
@@ -300,9 +311,23 @@ p {
 .gridWochentag {
     grid-template-columns:repeat(7, 1fr);
     display: grid;
-    border-top: 3px groove #E1B8E8;
+    border-top: 3px groove rgb(80, 192, 196);
     /* border-bottom: 3px groove #E1B8E8;  */
 }     
+
+
+.otherMonth {
+    color: lightgray
+}
+
+.searchBox {
+    grid-template-columns: 2fr 2fr 4fr;
+}
+
+.today {
+    border-color:rgb(80, 192, 196);
+    border-style: groove;
+}
 /* Meta Tag in CSS gibt  das Wert für Größe und Form des Ansichtsfensters, verschibt Infotext, Überblick in die geschichte und Fotos unter die Kalendar*/
 /* Bestimmt wie Groß wird "padding" (für jedes Element) auf die Geräten, dessen Bildschirmbreite weniger als 900px ist */
 @media only screen and (max-width: 900px) {
@@ -333,11 +358,9 @@ p {
     margin-right: 2pt;
 }
 h1 {
-    color: black;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
-    background-color: lavender;
     border-radius: 25px;
     width: 300pt;
 }
@@ -380,6 +403,8 @@ td{
     
 }
 }
+
+
 /* .borgerKalender:nth-child(1){
     border: 3px groove #f0ccf7;
     filter: brightness(80%);
