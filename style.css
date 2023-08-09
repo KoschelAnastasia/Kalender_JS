@@ -13,6 +13,8 @@ body {
                         "foto foto foto"
                         "fuss fuss fuss"
 }
+
+
 /* Die linke Monats Taste. Von oben nach unten: Höhe in pixel; Breite in pixel; Begrenzung; Schriftstil; obere und rechte Einzug 
 in pixel; Rundung die Ecken von Begrenzung; Schriftgroße; Versetzung einen flexiblen Container-Modus, der das Flexbox-Layout verwendet;
 justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers zu steuern;
@@ -34,6 +36,8 @@ Hintergrundfarbe; Verwendung von Schaten*/
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Die rechte Monats Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
 #buttonRechtsMonat {
     height: 30px;
@@ -51,6 +55,8 @@ Hintergrundfarbe; Verwendung von Schaten*/
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Die linke Jahr Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
 #buttonLinksJahr {
     height: 30px;
@@ -68,6 +74,8 @@ Hintergrundfarbe; Verwendung von Schaten*/
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Die rechte Jahr Taste, mit gleiche Eigenschaften wie "buttonLinksMonat" */
 #buttonRechtsJahr {
     height: 30px;
@@ -85,10 +93,14 @@ Hintergrundfarbe; Verwendung von Schaten*/
     background-color: rgba(246, 235, 248);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Stil für Fotos */
 #foto {
     grid-area: foto;
-}       
+}
+
+
 /* Geschichte Abschnit. Von oben nach unten: Posizionirung von Abschnit in "geschichte" Area; linke Einzug 
 in pixel; untere Begrenzung; text-align beschreibt wie horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers 
 zu steuern; Untere und Obere Enzug innerhalb von Objekt Grenze; die Höhe*/
@@ -103,6 +115,8 @@ zu steuern; Untere und Obere Enzug innerhalb von Objekt Grenze; die Höhe*/
     padding-top: 5px;
     height: auto;
 }
+
+
 /*Überschrifte "Kalender von" und "Fotos". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Zentrirung des Texstes
 Hintergrundfarbe; Rundung von Ecken */
 h1 {
@@ -113,6 +127,8 @@ h1 {
     background-color: lavender;
     border-radius: 5px;
 }
+
+
 /* Überschriften "Information" und "Historische ...". Von oben nach unten: Schriftfarbe; Schriftgroße; Schriftstil; Text 
 wird automatisch auf die Seite verteilt */
 h2 {
@@ -121,12 +137,16 @@ h2 {
     font-family: Trebuchet MS;
     text-align: auto;
 }
+
+
 /* .title {
     color: #581845;
     font-size: 30pt;
     font-family: Trebuchet MS;
     text-align: center;
 } */
+
+
 /* Stil für Tagen in die Kalender. Von oben nach Unten: Begrenzungs Farbe; Begrenzungs Stil; Rundung die Begrenzungs
 Ecken; Hintergrundfarbe; Höhe und Breite; Schriftfarbe; Schriftgroße; Schriftstil; Versetzung einen flexiblen Container-Modus, 
 der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
@@ -148,10 +168,18 @@ Containers zu steuern; Obere und Untere Einzug */
     margin-top: 3pt;
     margin-bottom: 3pt;
 }
+
+
+/* Posizionirung für Überschrift "Fotos". Von oben nach unten: Posizionirung in titel bereich; Zentrierung des Texstes */
 #titel {
     grid-area: titel;
     text-align: center;
-}  
+}
+
+
+/* Stil für Information bereich. Von oben nach unten: Posizionirung des textes in infotext bereich; Linke, obere und untere Einzug;
+Unterschtrich unten (Stil und Farbe); text-align beschreibt wie horizontale Ausrichtung von Elementen innerhalb eines flexiblen Containers 
+zu steuern; untere Enzug innerhalb von Objekt Grenze; passende Höhe   */
 #infotext {
     grid-area: infotext;
     margin-left: 6pt;
@@ -162,6 +190,10 @@ Containers zu steuern; Obere und Untere Einzug */
     padding-bottom: 15px;
     height: auto;
 }
+
+
+/* Stil für Jahr in Kalender Tabele. Von oben nach unten: obere, rechte, untere und linke Enzug innerhalb von Objekt Grenze; 
+Zentrirung des Texstes; Hintergrundfarbe; Schriftgroße; Schriftstil*/
 #jahr {
     padding-top: 10px;
     padding-right: 5px;
@@ -171,11 +203,19 @@ Containers zu steuern; Obere und Untere Einzug */
     background-color: #F2E7F4;
     font-size: 20pt;
     font-family: Trebuchet MS;
-    }   
-    #kopf{
+    }
+
+
+/*  Posizionirung der Überschrift "Kalender  vom..." in kopf Bereich und Einzug von ganzes Objekt */
+#kopf{
     grid-area: kopf;
     margin: 3pt 5pt 3pt 5pt;    
 }
+
+
+/*Stil für Begrenzung des Kalenders. Von oben nach unten: Breite, Stil, und die Farbe von Begrenzung; Rundung von Begrenzung; 
+Hintergrundfarbe; mit hilfe overflow: hidden wird den Hintergrundfarbe in Kalender box aufgepasst(gerundet), ohne diesen Mittel kann man 
+die Ecken von Hintergrund sehen; auto Höhe; Breite in pixel; untere Einzug in der Element; */
 .borderKalendar{
     border: 3px groove #E1B8E8;
     border-radius: 10px;
@@ -185,6 +225,10 @@ Containers zu steuern; Obere und Untere Einzug */
     width: 450px;
     padding-bottom: 5px
 }
+
+
+/* Posizionirung von Kalenderblatt. Von oben nach unten: Position auf die Seite in Kalenderblatt Bereich; Linke und obere Einzug in
+points; Untere Einzug ist auto; Rechte Einzug in points; Einzug innerhalb des Elementes in pixel*/
 .kalenderblatt {
     grid-area: kalenderblatt;
     margin-left: 120pt;
@@ -194,10 +238,17 @@ Containers zu steuern; Obere und Untere Einzug */
     padding-left: 5px
     
     }
-    li {
-        font-size: 15pt;
+
+
+/* Stil für Text in "Historische...". Schriftgroße und Schriftstil; */
+li {
+    font-size: 15pt;
     font-family: Trebuchet MS;   
 }
+
+
+/* Stil für Monat in die Kalenderblatt. Von oben nach unten: Zentrierung des Texstes; Hintergrundfarbe; Schriftgroße und -stil;
+obere, rechte,untere, linke Einzug innerhalb des Elementes;*/
 #monat {
     text-align: center;
     background-color:#F2E7F4 ;
@@ -207,11 +258,17 @@ Containers zu steuern; Obere und Untere Einzug */
     padding-right: 5px;
     padding-bottom: 10px;
     padding-left: 5px;
-}        
+}
+
+
+/*Stil für Text unten der "Information Überschrift". Schriftgroße und -stil;  */
 p {
     font-size: 15pt;
     font-family: Trebuchet MS;   
 }
+
+
+/*  */
 .wochenende {
     color: #C77FDC;
     /* filter: brightness(80%); */
