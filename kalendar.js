@@ -134,6 +134,7 @@ function calenderSheet () {
         let dateD = date.getDate();
         let monthD = date.getMonth();
         let year = date.getFullYear ();
+        let date2 = new Date(year, monthD, dateD);
         
         
         //Erste und letzte Tag des Monats in Kalendar Kopf werden richtig geschrieben   
@@ -200,20 +201,26 @@ function calenderSheet () {
 
             calenderBody.appendChild(tagCell);
 
-            if (date == dateD && date == monthD && date == year){
-        
-                tagCell.classList.add("today");
-            }
             
-        }
+            if (dateD == date2.getDate() && monthD == date2.getMonth() && year == date2.getFullYear()){
         
-     //  if (date == dateD && date == monthD && date == year){
+                calenderBody.appendChild(tagCell);
                 
-        //const todayDay = new Date(date);
-        //const todayCell = tagCellCreator(todayDay, `today`);
-        //calenderBody.appendChild(todayCell);
-    //}   
-        
+                // tagCell.classList.add("today");
+                             
+            }
+            //     if (globalDate == dateD && globalDate == monthD && globalDate == year){
+                
+                //       const todayDay = new Date(date);
+                //       const todayCell = tagCellCreator(todayDay, `today`);
+                //       calenderBody.appendChild(todayCell);
+             
+        //   }   
+        }
+        console.log ("What is: " + dateD +monthD +year);
+        console.log("And what is that: " + date2.getDate());
+        console.log("And what: " + date2.getMonth());
+        console.log("And what 2: "+ date2.getFullYear());
         //Eine Schleife die Zahlen des nächstes Monats definiert
         for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
             
