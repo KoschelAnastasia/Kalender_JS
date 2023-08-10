@@ -232,7 +232,7 @@ die Ecken von Hintergrund sehen; auto Höhe; Breite in pixel; untere Einzug in d
     overflow: hidden;
     height: auto;
     width: 450px;
-    padding-bottom: 5px
+    padding-bottom: 5px;
 }
 
 
@@ -244,8 +244,8 @@ points; Untere Einzug ist auto; Rechte Einzug in points; Einzug innerhalb des El
     margin-top: 100pt;
     margin-bottom: auto;
     margin-right: 130pt;
-    padding-left: 5px
-    
+    padding-left: 5px;
+        
     }
 
 
@@ -278,17 +278,22 @@ p {
 }
 
 
-/*  */
+/* Schriftfarbe für Samstag und Sontag in die Kalender */
 .wochenende {
     color: white;
     /* color: #c20404; */
-    /* filter: brightness(80%); */
-}  
+    }
+    
+    
+/*Schriftfarbe für Wochenende (Zahlen) in die Kalender  */
 .weekend {
     color: rgb(25, 124, 128);
 }
+
+/* Stil für Wochentage (Mo,Do usw). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat, "1fr" bedeutet 
+die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil;  */
 .wochentagen {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 7, 1fr;
     height: 30pt;
     width: 40pt;
     text-align: center;
@@ -298,9 +303,7 @@ p {
     justify-content: center;
     align-items: center;
 }
-/* .samstagbuchstaben, .sonntagbuchstaben {
-    background-color: #82229A;
-} */
+
 
 .gridHead {
     grid-template-columns:repeat(7, 1fr);
@@ -324,7 +327,7 @@ p {
     grid-template-columns: 2fr 2fr 4fr;
 }
 
-.today {
+.tag.today {
     border-color:rgb(80, 192, 196);
     border-style: groove;
 }

@@ -200,16 +200,19 @@ function calenderSheet () {
 
             calenderBody.appendChild(tagCell);
 
-            // if (date == dateD && date == monthD && date == year){
+            if (date == dateD && date == monthD && date == year){
         
-            //     const todayCell = tagCellCreator(`today`);
-            //     calenderBody.appendChild(todayCell);
-            // }
+                tagCell.classList.add("today");
+            }
             
-            console.log("what is date" + date);
         }
         
-        
+     //  if (date == dateD && date == monthD && date == year){
+                
+        //const todayDay = new Date(date);
+        //const todayCell = tagCellCreator(todayDay, `today`);
+        //calenderBody.appendChild(todayCell);
+    //}   
         
         //Eine Schleife die Zahlen des nächstes Monats definiert
         for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
@@ -236,11 +239,11 @@ function calenderSheet () {
         tagCell.textContent = day2.getDate();
 
  
-        // if (today) {
+        if (today) {
 
-        //     tagCell.classList.add("today");
+            tagCell.classList.add("today");
         
-        // }
+        }
 
         if (otherMonth) {
 
