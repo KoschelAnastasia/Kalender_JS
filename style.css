@@ -291,17 +291,11 @@ p {
 }
 
 /* Stil für Wochentage (Mo,Do usw). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat, "1fr" bedeutet 
-<<<<<<< HEAD
-die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil; Versetzung einen flexiblen Container-Modus, 
-der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
-flexiblen Containers zu steuern; align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
-Containers zu steuern;*/
-=======
 die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil; Versetzung einen flexiblen 
 Container-Modus, der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen 
 innerhalb eines flexiblen Containers zu steuern; align-items ist ein Mittel, der hilft vertikale Ausrichtung von Elementen innerhalb 
 eines flexiblen Containers zu steuern;*/
->>>>>>> 016e4ae82072ea600d1485427329c6ca4e4e8f49
+
 .wochentagen {
     grid-template-columns: 7, 1fr;
     height: 30pt;
