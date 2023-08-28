@@ -157,7 +157,7 @@ h2 {
 /* Stil für Tagen in die Kalender. Von oben nach Unten: Begrenzungs Farbe; Begrenzungs Stil; Rundung die Begrenzungs
 Ecken; Hintergrundfarbe; Höhe und Breite; Schriftfarbe; Schriftgroße; Schriftstil; Versetzung einen flexiblen Container-Modus, 
 der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
-flexiblen Containers zu steuern; align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
+flexiblen Containers zu steuern; align-items ist ein Mittel, der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
 Containers zu steuern; Obere und Untere Einzug */
 .tag {
     border-color:rgb(80, 192, 196);
@@ -257,7 +257,7 @@ li {
 
 
 /* Stil für Monat in die Kalenderblatt. Von oben nach unten: Zentrierung des Texstes; Hintergrundfarbe; Schriftgroße und -stil;
-obere, rechte,untere, linke Einzug innerhalb des Elementes;*/
+obere, rechte,untere, linke Einzug innerhalb des Elementes; Farbe;*/
 #monat {
     text-align: center;
     background-color:rgb(116, 204, 207)2E7F4 ;
@@ -291,7 +291,10 @@ p {
 }
 
 /* Stil für Wochentage (Mo,Do usw). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat, "1fr" bedeutet 
-die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil;  */
+die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil; Versetzung einen flexiblen 
+Container-Modus, der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen 
+innerhalb eines flexiblen Containers zu steuern; align-items ist ein Mittel, der hilft vertikale Ausrichtung von Elementen innerhalb 
+eines flexiblen Containers zu steuern;*/
 .wochentagen {
     grid-template-columns: 7, 1fr;
     height: 30pt;
@@ -304,13 +307,17 @@ die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Sc
     align-items: center;
 }
 
-
+/* Stil für Kalenderkopf (Monat, Jahr, Button). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
+display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen; Einzeg auf alle Seiten in points */
 .gridHead {
     grid-template-columns:repeat(7, 1fr);
     display: grid;
     padding: 10pt 20pt 10pt 20pt;
     
 }
+
+/* Stil für Wochentagen. Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
+display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen; Obere Begrenzung (Breite in pixel, Stil und Farbe) */
 .gridWochentag {
     grid-template-columns:repeat(7, 1fr);
     display: grid;
