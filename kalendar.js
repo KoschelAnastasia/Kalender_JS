@@ -202,25 +202,15 @@ function calenderSheet () {
             calenderBody.appendChild(tagCell);
 
             
-            if (dateD == date2.getDate() && monthD == date2.getMonth() && year == date2.getFullYear()){
-        
-                calenderBody.appendChild(tagCell);
-                
-                // tagCell.classList.add("today");
+            if (dateD == tag && monthD == date2.getMonth() && year == date2.getFullYear()){
+                     
+                        
+                tagCell.classList.add(`today`);
                              
             }
-            //     if (globalDate == dateD && globalDate == monthD && globalDate == year){
-                
-                //       const todayDay = new Date(date);
-                //       const todayCell = tagCellCreator(todayDay, `today`);
-                //       calenderBody.appendChild(todayCell);
-             
-        //   }   
         }
-        console.log ("What is: " + dateD +monthD +year);
-        console.log("And what is that: " + date2.getDate());
-        console.log("And what: " + date2.getMonth());
-        console.log("And what 2: "+ date2.getFullYear());
+        
+       
         //Eine Schleife die Zahlen des nächstes Monats definiert
         for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
             
@@ -230,6 +220,12 @@ function calenderSheet () {
             calenderBody.appendChild(emptyCell);
             
         }
+
+    //     holidays()
+
+    //     function holidays() { 
+
+    // }
         
     }
     
@@ -251,6 +247,10 @@ function calenderSheet () {
             tagCell.classList.add("today");
         
         }
+
+        // if (feiertag){
+        //     tagCell.classList.add("feiertag"); 
+        // }
 
         if (otherMonth) {
 
@@ -296,4 +296,49 @@ function calenderSheet () {
     });
     
 }
+
+
+// Ostern Formel 
+// funktion holidays(){ 
+
+//     let date= new Date ();
+//     let dateD = date.getDate();
+//     let year = date.getFullYear();
+
+//     In getMonth ist der Wert für Moaten ab 0 anfängt. Es heißt, dass Januar=0 und Dezember=11. Um Monate bequemer in Algorithmus eingeben zu können, würde getMonth + 1 geschrieben
+//     let monthD = date.getMonth () + 1;
+//     let holidayYesOrNo;
+// const a = year % 4;
+// const b = year % 7;
+// const c = year % 19;
+// const d = (19*c +24) % 30;
+// const e = (2*a + 4*b + 6*d +5) % 7;
+// const f = (c + 11*d + 22*e) % 451;
+
+// const osternSonntag = Math.floor(22+d+e-7*f);
+// if (osternSonntag > 31){
+//         osternSonntag = Math.floor((22+d+e-7*f) -31); 
+ 
+// }
+
+// return osternSonntag;
+// tagCell.classList.add(`osternSonntag`, `feiertag`);
+
+// if ( dateD == 1 && monthD == 1 || osternSonntag - 2 == dateD || osternSonntag == dateD|| osternSonntag + 1 == dateD || dateD == 1 && monthD == 5 || osternSonntag + 39 == dateD || 
+// osternSonntag + 49 == dateD || osternSonntag + 50 == dateD || osternSonntag + 60 == dateD || date == 3 && monthD == 10 || date == 25 && monthD == 12 || date == 26 && monthD == 12) {
+//     tagCell.classList.add(`feiertag`);
+//     holidayYesOrNo ="";
+// }
+// else {
+//     holidayYesOrNo = "nicht"; 
+// }
+
+// document.getElementById(`infoHoliday`).innerHTML = holidayYesNoD;
+
+//  }
+
+
+
+
+
 

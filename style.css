@@ -257,7 +257,7 @@ li {
 
 
 /* Stil für Monat in die Kalenderblatt. Von oben nach unten: Zentrierung des Texstes; Hintergrundfarbe; Schriftgroße und -stil;
-obere, rechte,untere, linke Einzug innerhalb des Elementes;*/
+obere, rechte,untere, linke Einzug innerhalb des Elementes; Farbe;*/
 #monat {
     text-align: center;
     background-color:rgb(116, 204, 207)2E7F4 ;
@@ -291,7 +291,10 @@ p {
 }
 
 /* Stil für Wochentage (Mo,Do usw). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat, "1fr" bedeutet 
-die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil;  */
+die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Schriftgroße und -stil; Versetzung einen flexiblen Container-Modus, 
+der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
+flexiblen Containers zu steuern; align-items ist ein Mittel; der hilft vertikale Ausrichtung von Elementen innerhalb eines flexiblen 
+Containers zu steuern;*/
 .wochentagen {
     grid-template-columns: 7, 1fr;
     height: 30pt;
@@ -304,11 +307,15 @@ die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Sc
     align-items: center;
 }
 
-
+/* Stil für Kalenderkopf (Monat, Jahr, Button). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
+display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen; Einzeg auf alle Seiten in points */
 .gridHead {
     grid-template-columns:repeat(7, 1fr);
     display: grid;
     padding: 10pt 20pt 10pt 20pt;
+
+/* Stil für Wochentagen. Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
+display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen; Obere Begrenzung (Breite in pixel, Stil und Farbe) */
     
 }
 .gridWochentag {
@@ -318,102 +325,106 @@ die große von schpalte; Höhe und Breite in points; Zentrierung des Texstes; Sc
     /* border-bottom: 3px groove #E1B8E8;  */
 }     
 
-
+/* Farbe für Tage, der vorherige und nächste Monat  */
 .otherMonth {
     color: lightgray
 }
 
-.searchBox {
+
+/* .searchBox {
     grid-template-columns: 2fr 2fr 4fr;
+} */
+
+.today {
+    background-color:rgb(20, 171, 177);;
+
 }
 
-.tag.today {
-    border-color:rgb(80, 192, 196);
-    border-style: groove;
-}
+
+
+
 /* Meta Tag in CSS gibt  das Wert für Größe und Form des Ansichtsfensters, verschibt Infotext, Überblick in die geschichte und Fotos unter die Kalendar*/
 /* Bestimmt wie Groß wird "padding" (für jedes Element) auf die Geräten, dessen Bildschirmbreite weniger als 900px ist */
 @media only screen and (max-width: 900px) {
+    
+/*In Body würde die minimale Bildschirmauflösung, Hintergrundfarbe bestimt. Mithilfe grid-template-areas wird Bildschirm in bestimte Zonen verteilt.
+Bildschirm hat 3 Columns (die mithilfe von grid-template-columns bestimte Breite hat) und 6 Zeilen  */
     body {
         display: block;
         margin: 0px;
-    padding-top: 2%;
-    padding-bottom: 2%;    
-    padding-left: 2%;
-    padding-right: 2%; 
-    grid-template-columns: 1fr 3fr 0.5fr;
-    grid-template-areas:"kopf kopf kopf"
-    "kalenderblatt infotext platz"
-                        "kalenderblatt geschichte platz"
-                        "titel titel titel"
-                        "foto foto foto"
-                        "fuss fuss fuss"                     
+        padding-top: 2%;
+        padding-bottom: 2%;    
+        padding-left: 2%;
+        padding-right: 2%; 
+        grid-template-columns: 1fr 3fr 0.5fr;
+        grid-template-areas:"kopf kopf kopf"
+                            "kalenderblatt infotext platz"
+                            "kalenderblatt geschichte platz"
+                            "titel titel titel"
+                            "foto foto foto"
+                            "fuss fuss fuss"                     
 
                     }
 
-                    .kalenderblatt {
-    margin: 40px 0px 40px -7px; 
-    padding: 5pt;
-    height: 400px;
-    width: 440px;
-    margin-left: 2pt;
-    margin-top: 30pt;
-    margin-right: 2pt;
-}
-h1 {
-    font-size: 30pt;
-    font-family: Trebuchet MS;
-    text-align: center;
-    border-radius: 25px;
-    width: 300pt;
-}
-.borderKalendar {
-    margin: 40px 0px 40px -7px; 
-    padding: 5pt;
-    height: auto;
-    width: 300pt;
-    margin-left: 2pt;
-    margin-top: 30pt;
-    margin-right: 0pt;
-}
-.kalenderblatt{
-    padding-left: 3px;
-    padding-right: 6pt;
-}
-/* th{
-max-width: 20pt;
-}
-td{
-    max-height: 15pt;
-} */
-#infotext {
-    /* margin: 40px 2px 40px 2px; */
-    width: 300pt;
-    height: auto;
+    
+    
+    .kalenderblatt {
+        margin: 40px 0px 40px -7px; 
+        padding: 5pt;
+        height: 400px;
+        width: 440px;
+        margin-left: 2pt;
+        margin-top: 30pt;
+        margin-right: 2pt;
+                }
+    
+    
+    
+    h1 {
+        font-size: 30pt;
+        font-family: Trebuchet MS;
+        text-align: center;
+        border-radius: 25px;
+        width: 300pt;
+        }
+    
+    
+    
+    .borderKalendar {
+        margin: 40px 0px 40px -7px; 
+        padding: 5pt;
+        height: auto;
+        width: 300pt;
+        margin-left: 2pt;
+        margin-top: 30pt;
+        margin-right: 0pt;
+                    }
+    
+    
+    
+    .kalenderblatt{
+        padding-left: 3px;
+        padding-right: 6pt;
+                    }
 
-    
-}
-#geschichte {
-    /* margin: 40px 2px 40px 2px; */
-    width: 300pt;
-    height: auto;
-    
-}
-#foto{
-    /* margin: 40px 2px 40px 2px; */
-    width: 315pt;
-    height: auto;
-    
-}
-}
+    #infotext {
+        width: 300pt;
+        height: auto;
+        /* margin: 40px 2px 40px 2px; */
+                }
 
 
-/* .borgerKalender:nth-child(1){
-    border: 3px groove #f0ccf7;
-    filter: brightness(80%);
-} */
-/* 
-passt gut für unaktive tagen
-color: #E6D2F7;
-filter: brightness(80%);
-*/
+
+    #geschichte {
+        width: 300pt;
+        height: auto;
+        /* margin: 40px 2px 40px 2px; */
+                }
+    #foto{
+        width: 315pt;
+        height: auto;
+        /* margin: 40px 2px 40px 2px; */
+            }
+}
+
+
