@@ -99,13 +99,15 @@ function wIMonth () {
     //dateD hat wert von heutigen Tag. weekdayD hat wert von Wochentag (wo: 0 ist Sonntag, 1 ist Montag usw)
     //firstWeekdayOfMonth hat wert von erste Tag in Monat der gleiche Wochen Tag hat wie weekdayD
     //Matimatische Formel berechnet Differenz zwischen dateD und firstWeekdayOfMonth und addiert weekdayD.
-    //Dann wird Ergebnis durch 7 geteilt, um "Runde" Zahl in Ergebnis zu bekommen, wird hier .ceil Methode verwendet 
+    //Dann wird Ergebnis durch 7 geteilt. Um "Runde" Zahl in Ergebnis zu bekommen, wird hier .ceil Methode verwendet 
     //Mithilfe Methode .ceil wird die Ergebnis immer nach oben "gerundet"   
         const numberOfWeekday = Math.ceil ((dateD -firstWeekdayOfMonth.getDate() + weekdayD)/7);
         document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
         
 }
 
+
+// Funktion für die Kalender Aufbau 
 function calenderSheet () {
  
     //Variables für Datum
@@ -117,10 +119,12 @@ function calenderSheet () {
     calenderBody.style.display = "grid";
     calenderBody.style.gridTemplateColumns = "repeat(7, 1fr)";
     
-    
+    // Lehre variablen mit Klassen für Monat und Jahr
     let monthElement = document.getElementById(`monat`);
     let yearElement = document.getElementById(`jahr`);
     
+
+    // Aufruf den Buttons in die Kalender Kopf.
     let buttonLinksMonat = document.getElementById(`buttonLinksMonat`);
     let buttonRechtsMonat = document.getElementById(`buttonRechtsMonat`);
     let buttonLinksJahr = document.getElementById(`buttonLinksJahr`);
@@ -164,7 +168,8 @@ function calenderSheet () {
         //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.
         const monthName = ["Jan.", "Feb.", "März", "Apr. ", "Mai", "Jun.", "Jul.", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."];
         let textMonth = (monthName[monthD]);
-
+        
+        //Monat und Jahr Variablen bekommen ein wert. Für Monat ist es ein Text. Für Jahr Zahl
         monthElement.textContent = (textMonth);
         yearElement.textContent = (date.getFullYear());
 
@@ -179,9 +184,11 @@ function calenderSheet () {
         //Konstanten die Datum für nächste Monat definieren
         const nextMonth = new Date(year, monthD + 1, 1);
 
-        //
         
-        //Eine Schleife die Zahlen des Vormonats definiert
+        //Eine Schleife die Zahlen des Vormonats definiert. Funktioniert volgendes: Die schleife "sagt", dass i gleich
+        //  firsteDayOfWeek minus 1 ist. firstDayWeekder hat immer Wert von Erste Tag den gewünschte Monats, wenn wir substrahiren
+        // eins, dann werden wir den letzte Tag vorherieges Monats bekommen. Und bis i großer oder genau so Hoh wie
+        // 1, wird immer wieder von i 1 substrahieren
         for (let i = firstDayOfWeek - 1; i >= 1; i--) {
                 
                 const prevMonthDay = new Date(prevMonth);
@@ -192,7 +199,10 @@ function calenderSheet () {
         }            
         
         
-        //Eine Schleife die Zahlen des aktueles Monats definiert
+        //Eine Schleife die Zahlen des aktueles Monats definiert. Funktioniert volgendes: Den Tag hat wert von 1 (wert von 
+        // Anfangs des Monats). Variebles allDayInMonth hat wert von gesamte Zahl von Tagen (wenn in Monat 30 Tagen; dann hat
+        // Variables wert von 30) Und so lange bis erste Tag des Monats hat weniger oder genau so wert wie allDayInMonth
+        // wird zum tag 1 summiert
         for (let tag = 1; tag <= allDayInMonth; tag ++) {
 
             let day = new Date(date.getFullYear(), date.getMonth(), tag);
