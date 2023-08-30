@@ -209,78 +209,73 @@ function calenderSheet () {
             
         }
         
-        //     holidays()
-        
-        //     function holidays() { 
-            
-            // }
-            
+                    
         }
-        calcOsternDatum()
+    calcOsternDatum()
         
-        // Ostern Formel 
-        function calcOsternDatum() { 
+    // Ostern Formel 
+    function calcOsternDatum() { 
             
-            let date= new Date ();
-            let dateD = date.getDate();
+        let date= new Date ();
+        let dateD = date.getDate();
         let monthD = date.getMonth();
         let year = date.getFullYear();
         let globalDate = new Date (year, monthD, dateD);
         console.log("What is globalDate" + globalDate );
         console.log(`Year is: `  + year);
-    // Diese Variablen werden verwendet, um des Datum des Frühlingvollmonds zu berechnen. Ostern ist ein Feiertag dessen Datum nicht fest schteht.
-    // Die ist immer abhängig von Frühlingvollmonds. Alle Konstanten werden weiter in Gaußschen Formel verwendet, um die Länge der Mondmonate, Sonnentage
-    // und andere Faktoren zu korregieren, um ein genaues Ostern Datum zu erhalten 
-    const a = year % 19; 
-    const b = Math.floor(year / 100);
-    const c = year % 100;
-    const d = Math.floor(b / 4);
-    const e = b % 4;
-    const f = Math.floor((b + 8) / 25);
-    const g = Math.floor((b - f + 1) / 3);
-    const h = (19 * a + b - d - g + 15) % 30;
-    const i = Math.floor(c / 4);
-    const k = c % 4;
-    const l = (32 + 2 * e + 2 * i - h - k) % 7;
-    const m = Math.floor((a + 11 * h + 22 * l) / 451);
     
-    // Berechnen in welches Monat ist Ostern
-    const month3 = Math.floor((h + l - 7 * m + 114) / 31) -1;
     
-    // Ostern feiert man immer am Sonntag. Diese Formel berechnet es
-    const date3 = ((h + l - 7 * m + 114) % 31) + 1;
+        // Diese Variablen werden verwendet, um des Datum des Frühlingvollmonds zu berechnen. Ostern ist ein Feiertag dessen Datum nicht fest schteht.
+        // Die ist immer abhängig von Frühlingvollmonds. Alle Konstanten werden weiter in Gaußschen Formel verwendet, um die Länge der Mondmonate, Sonnentage
+        // und andere Faktoren zu korregieren, um ein genaues Ostern Datum zu erhalten 
+        const a = year % 19; 
+        const b = Math.floor(year / 100);
+        const c = year % 100;
+        const d = Math.floor(b / 4);
+        const e = b % 4;
+        const f = Math.floor((b + 8) / 25);
+        const g = Math.floor((b - f + 1) / 3);
+        const h = (19 * a + b - d - g + 15) % 30;
+        const i = Math.floor(c / 4);
+        const k = c % 4;
+        const l = (32 + 2 * e + 2 * i - h - k) % 7;
+        const m = Math.floor((a + 11 * h + 22 * l) / 451);
     
-    let osternDatum = new Date(year, month3 , date3);
+        // Berechnen in welches Monat ist Ostern
+         const month3 = Math.floor((h + l - 7 * m + 114) / 31) -1;
     
-    console.log(`Der Datum von Osternsonntag: ` + osternDatum);
+        // Ostern feiert man immer am Sonntag. Diese Formel berechnet es
+        const date3 = ((h + l - 7 * m + 114) % 31) + 1;
+    
+        let osternDatum = new Date(year, month3 , date3);
+    
+        console.log(`Der Datum von Osternsonntag: ` + osternDatum);
     
     
     
     calcHessenFerien ()
     
     function calcHessenFerien () {
-      
-     
-     
+        
+        let feiertagen = [
+            { date: new Date (year, 0, 1), name: "Neujahrstag" },
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate()), name: "Ostersonntag" },
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 1), name: "Ostermontag"},
+            { date: new Date (year, 4, 1), name: "Tag der Arbeit"},
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 39), name: "Christi Himmelfahrt"},
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 49), name: "Pfingstsonntag"} ,
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 50), name: "Pfingstmontag"},
+            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 60), name: "Fronleichnam"} ,
+            { date: new Date (year, 9, 3), name: "Tag der Deutschen Einheit"},
+            { date: new Date (year, 11, 25), name: "1. Weihnachtsfeiertag"},
+            { date: new Date (year, 11, 26), name: "2. Weihnachtsfeiertag"},  
+            {date: new Date (year, 7, 29), name: "Test Datum"}
     
-    let feiertagen = [
-        { date: new Date (year, 0, 1), name: "Neujahrstag" },
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate()), name: "Ostersonntag" },
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 1), name: "Ostermontag"},
-        { date: new Date (year, 4, 1), name: "Tag der Arbeit"},
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 39), name: "Christi Himmelfahrt"},
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 49), name: "Pfingstsonntag"} ,
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 50), name: "Pfingstmontag"},
-        { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 60), name: "Fronleichnam"} ,
-        { date: new Date (year, 9, 3), name: "Tag der Deutschen Einheit"},
-        { date: new Date (year, 11, 25), name: "1. Weihnachtsfeiertag"},
-        { date: new Date (year, 11, 26), name: "2. Weihnachtsfeiertag"},  
-        {date: new Date (year, 7, 29), name: "Test Datum"}
-    
-        ];  
-        console.log(`Und was ist: ` + feiertagen[1].date);
-        console.log(`Kanst du mir sagen was ist: ` + feiertagen[1].name);
+                        ];  
+            console.log(`Es ist ist: ` + feiertagen[1].date);
+            console.log(`Und das ist: ` + feiertagen[1].name);
+            
         
 
         for (let i=0; i< feiertagen.length; i++){
@@ -296,6 +291,7 @@ function calenderSheet () {
         }
     }   
     }   
+    
     
     //Funktion, die "tag" Zelle erstellt
 
@@ -324,16 +320,16 @@ function calenderSheet () {
         }
         
         
-        if (feiertag) {
-            tagCell.classList.add("feiertag"); 
-        }
-
+        
         if (day2.getDay() == 0 || day2.getDay() == 6) {
             
             tagCell.classList.add("weekend");
             
         }    
-
+        
+        if (feiertag) {
+            tagCell.classList.add("feiertag"); 
+        }
  
 
         return tagCell;
