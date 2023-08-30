@@ -6,36 +6,38 @@ window.onload= function() {
     calenderSheet ();
 }
 
+//Variablen für überschrift
+//Variablen für infoText
+let date= new Date ();
+let dateD = date.getDate();
+let monthD = date.getMonth ();
+let year = date.getFullYear ();
+let weekdayD = date.getDay ();
+
+
+
+
+
+
 //Funktion für oberes Überschrift
 function überschrift()
 {
 
-    //Variablen für überschrift
-    let date= new Date ();
-    let dateD = date.getDate();
-    let monthD = date.getMonth ();
-    let year = date.getFullYear ();
 
     //Zueignung ein wert für Konstanten, damit Monats würde als Zahlen gezeigt 
     const monthName = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-    let monthInfo = (monthName[monthD]);
+    let monthInfo = (monthName[date.getMonth()]);
 
     //Zueignung einer ID zu Variablen, damit die in HTML aufgerufen werden können
-    document.getElementById(`date`).innerHTML = dateD;
+    document.getElementById(`date`).innerHTML = date.getDate();
     document.getElementById(`month`).innerHTML = monthInfo;
-    document.getElementById(`year`).innerHTML = year;
+    document.getElementById(`year`).innerHTML = date.getFullYear();
 }
 
 //Funktion für Information Kapitel
 function kalendarInfotext()
 {    
-
-    //Variablen für infoText
-    let date= new Date ();
-    let dateD = date.getDate();
-    let monthD = date.getMonth ();
-    let year = date.getFullYear ();
-    let weekdayD = date.getDay ();
+    
 
     //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.
     const monthName = ["Januar", "Februar", "März", "April ", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
@@ -62,10 +64,8 @@ function kalendarInfotext()
 //Ein Algorithmus zum Zählen von Wiederholungen von Wochentagen
 function wIMonth () {
     
-    //Konstanten, die deffinieren wert von Heutigen Tag und Wochentag
-    const date = new Date();
-    const dateD = date.getDate();
-    const weekdayD = date.getDay ();
+    
+   
     const firstWeekdayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
 
     //While Schleife sucht erste Tag in Monat der gleiche Wochen Tag hat wie weekdayD    
@@ -90,7 +90,7 @@ function calenderSheet () {
  
     //Variables für Datum
     letdaysTag = document.querySelector(".tag");
-    let date = new Date();
+    
     
     //get ID für Kalender aufbau (Monat, Jahr, button)
     let calenderBody = document.getElementById("kalenderblatt");
@@ -113,12 +113,7 @@ function calenderSheet () {
     // Ostern Formel 
     function calcOsternDatum() { 
             
-        let date= new Date ();
-        let dateD = date.getDate();
-        let monthD = date.getMonth();
-        let year = date.getFullYear();
-        let globalDate = new Date (year, monthD, dateD);
-        console.log("What is globalDate" + globalDate );
+        console.log("What is Global Date " + date );
         console.log(`Year is: `  + year);
     
     
@@ -139,12 +134,12 @@ function calenderSheet () {
         const m = Math.floor((a + 11 * h + 22 * l) / 451);
     
         // Berechnen in welches Monat ist Ostern
-         const month3 = Math.floor((h + l - 7 * m + 114) / 31) -1;
+         const monthOstern = Math.floor((h + l - 7 * m + 114) / 31) -1;
     
         // Ostern feiert man immer am Sonntag. Diese Formel berechnet es
-        const date3 = ((h + l - 7 * m + 114) % 31) + 1;
+        const dateOstern = ((h + l - 7 * m + 114) % 31) + 1;
     
-        let osternDatum = new Date(year, month3 , date3);
+        let osternDatum = new Date(year, monthOstern, dateOstern);
     
         console.log(`Der Datum von Osternsonntag: ` + osternDatum);
     
@@ -153,7 +148,9 @@ function calenderSheet () {
     calcHessenFerien ()
     
     function calcHessenFerien () {
-        
+
+        let localDate = new Date (year, monthD, dateD);    
+
         let feiertagen = [
             { date: new Date (year, 0, 1), name: "Neujahrstag" },
             { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
@@ -167,23 +164,18 @@ function calenderSheet () {
             { date: new Date (year, 9, 3), name: "Tag der Deutschen Einheit"},
             { date: new Date (year, 11, 25), name: "1. Weihnachtsfeiertag"},
             { date: new Date (year, 11, 26), name: "2. Weihnachtsfeiertag"},  
-            { date: new Date (year, 7, 30), name: "Test Datum"}
+            { date: new Date (year, 7, 31), name: "Test Datum"}
     
                         ];  
-            console.log(`Es ist ist: ` + feiertagen[0].date);
-            console.log(`Und das ist: ` + feiertagen[0].name);
+
             console.log(`Es ist ist: ` + feiertagen[1].date);
             console.log(`Und das ist: ` + feiertagen[1].name);
-            console.log(`Es ist ist: ` + feiertagen[6].date);
-            console.log(`Und das ist: ` + feiertagen[6].name);
-            console.log(`Es ist ist: ` + feiertagen[9].date);
-            console.log(`Und das ist: ` + feiertagen[9].name);
             console.log(`Es ist ist: ` + feiertagen[12].date);
             console.log(`Und das ist: ` + feiertagen[12].name);
             
 
             for (let i=0; i< feiertagen.length; i++){
-                if( globalDate.getTime() == feiertagen[i].date.getTime()){
+                if( localDate.getTime() == feiertagen[i].date.getTime()){
                 
                     document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
                 
@@ -197,17 +189,15 @@ function calenderSheet () {
         }       
     } 
     
-    calenderRender (date)
+    calenderRender ()
     
     //Render Funktion    
-    function  calenderRender (date, feiertagen) {
+    function  calenderRender ( feiertagen) {
         
         let dateD = date.getDate();
-        console.log("date " + date);
-        
         let monthD = date.getMonth();
         let year = date.getFullYear ();
-        let date2 = new Date(year, monthD, dateD);
+        
         
         
         //Erste und letzte Tag des Monats in Kalendar Kopf werden richtig geschrieben   
@@ -281,7 +271,7 @@ function calenderSheet () {
             calenderBody.appendChild(tagCell);
             
             
-            if (dateD == tag && monthD == date2.getMonth() && year == date2.getFullYear()){
+            if (dateD == tag && monthD == date.getMonth() && year == date.getFullYear()){
                 
                 
                 tagCell.classList.add(`today`);
@@ -290,13 +280,11 @@ function calenderSheet () {
 
             tagCell.addEventListener ("click", function(){
             
-                globalDate = new Date (year, monthD, tag);
-                console.log("globalDate: " + globalDate);
-                console.log("tag "+tag);
-                date=globalDate;
-                console.log("date in function "+date);
+                date = new Date (date.getFullYear(), date.getMonth(), tag);
+                console.log("tag "+ tag);
+                console.log("date in function "+ date);
 
-                überschrift(); kalendarInfotext(); wIMonth (); calenderRender (date); 
+                überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date); 
             })
         }
         
@@ -321,7 +309,7 @@ function calenderSheet () {
             
             
         //     calenderBody.appendChild(tagCell);
-        //         if( globalDate.getTime() == feiertagen[i].date.getTime()){
+        //         if( date.getTime() == feiertagen[i].date.getTime()){
                 
         //         tagCell.classList.add(`feiertag`);
         //         }
@@ -337,9 +325,7 @@ function calenderSheet () {
 
     function tagCellCreator (day, otherMonth, today, feiertag) {
         
-        let dateD = date.getDate();
-        let monthD = date.getMonth();
-        let year = date.getFullYear ();
+        
         let day2 = new Date(day);
 
         const tagCell = document.createElement("div");
