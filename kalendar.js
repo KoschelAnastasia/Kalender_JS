@@ -41,22 +41,22 @@ function kalendarInfotext()
 
     //Zueignung ein wert für Konstanten, damit Monats wurde als Text gezeigt.
     const monthName = ["Januar", "Februar", "März", "April ", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
-    let monthInfo = (monthName[monthD]);
+    let monthInfo = (monthName[date.getMonth()]);
 
     //Zueignung ein wert für Konstanten, damit Wochentags wurde als Text gezeigt. Sonntag hat in getDay Wert von 0, es heißt Sonntag "erste Tag" in der Woche ist.
     const weekDayName = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    let weekDayInfo = (weekDayName[weekdayD]);
+    let weekDayInfo = (weekDayName[date.getDay()]);
     // let weekInMonth = date.getMonth ();
     
 
     //Zueignung einer ID zu Variablen, damit die in HTML aufgerufen werden können
-    document.getElementById(`infoDate`).innerHTML = dateD;
+    document.getElementById(`infoDate`).innerHTML = date.getDate();
     document.getElementById(`infoMonth`).innerHTML = monthInfo;
     document.getElementById(`infoMonth2`).innerHTML = monthInfo;
     document.getElementById(`infoWeekday`).innerHTML = weekDayInfo;
     document.getElementById(`infoWeekday2`).innerHTML = weekDayInfo;
-    document.getElementById(`infoYear`).innerHTML = year;
-    document.getElementById(`infoYear2`).innerHTML = year;
+    document.getElementById(`infoYear`).innerHTML = date.getFullYear();
+    document.getElementById(`infoYear2`).innerHTML = date.getFullYear();
 
 }
 
@@ -69,7 +69,7 @@ function wIMonth () {
     const firstWeekdayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
 
     //While Schleife sucht erste Tag in Monat der gleiche Wochen Tag hat wie weekdayD    
-    while (firstWeekdayOfMonth.getDate() !== weekdayD){
+    while (firstWeekdayOfMonth.getDate() !== date.getDay()){
         firstWeekdayOfMonth.setDate(firstWeekdayOfMonth.getDate()+1)
     }
     
@@ -79,7 +79,7 @@ function wIMonth () {
     //Matimatische Formel berechnet Differenz zwischen dateD und firstWeekdayOfMonth und addiert weekdayD.
     //Dann wird Ergebnis durch 7 geteilt. Um "Runde" Zahl in Ergebnis zu bekommen, wird hier .ceil Methode verwendet 
     //Mithilfe Methode .ceil wird die Ergebnis immer nach oben "gerundet"   
-    const numberOfWeekday = Math.ceil ((dateD -firstWeekdayOfMonth.getDate() + weekdayD)/7);
+    const numberOfWeekday = Math.ceil ((date.getDate() -firstWeekdayOfMonth.getDate() + date.getDay())/7);
     document.getElementById(`infoNummberWeekday`).innerHTML = numberOfWeekday;
     
 }
@@ -120,9 +120,9 @@ function calenderSheet () {
         // Diese Variablen werden verwendet, um des Datum des Frühlingvollmonds zu berechnen. Ostern ist ein Feiertag dessen Datum nicht fest schteht.
         // Die ist immer abhängig von Frühlingvollmonds. Alle Konstanten werden weiter in Gaußschen Formel verwendet, um die Länge der Mondmonate, Sonnentage
         // und andere Faktoren zu korregieren, um ein genaues Ostern Datum zu erhalten 
-        const a = year % 19; 
+        const a = date.getFullYear() % 19; 
         const b = Math.floor(year / 100);
-        const c = year % 100;
+        const c = date.getFullYear() % 100;
         const d = Math.floor(b / 4);
         const e = b % 4;
         const f = Math.floor((b + 8) / 25);
@@ -139,7 +139,7 @@ function calenderSheet () {
         // Ostern feiert man immer am Sonntag. Diese Formel berechnet es
         const dateOstern = ((h + l - 7 * m + 114) % 31) + 1;
     
-        let osternDatum = new Date(year, monthOstern, dateOstern);
+        let osternDatum = new Date(date.getFullYear(), monthOstern, dateOstern);
     
         console.log(`Der Datum von Osternsonntag: ` + osternDatum);
     
@@ -149,22 +149,22 @@ function calenderSheet () {
     
     function calcHessenFerien () {
 
-        let localDate = new Date (year, monthD, dateD);    
+        let localDate = new Date (date.getFullYear(), date.getMonth(), date.getDate());    
 
         let feiertagen = [
-            { date: new Date (year, 0, 1), name: "Neujahrstag" },
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate()), name: "Ostersonntag" },
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 1), name: "Ostermontag"},
-            { date: new Date (year, 4, 1), name: "Tag der Arbeit"},
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 39), name: "Christi Himmelfahrt"},
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 49), name: "Pfingstsonntag"} ,
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 50), name: "Pfingstmontag"},
-            { date: new Date (year, osternDatum.getMonth(), osternDatum.getDate() + 60), name: "Fronleichnam"} ,
-            { date: new Date (year, 9, 3), name: "Tag der Deutschen Einheit"},
-            { date: new Date (year, 11, 25), name: "1. Weihnachtsfeiertag"},
-            { date: new Date (year, 11, 26), name: "2. Weihnachtsfeiertag"},  
-            { date: new Date (year, 7, 31), name: "Test Datum"}
+            { date: new Date (date.getFullYear(), 0, 1), name: "Neujahrstag" },
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate()), name: "Ostersonntag" },
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() + 1), name: "Ostermontag"},
+            { date: new Date (date.getFullYear(), 4, 1), name: "Tag der Arbeit"},
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() + 39), name: "Christi Himmelfahrt"},
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() + 49), name: "Pfingstsonntag"} ,
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() + 50), name: "Pfingstmontag"},
+            { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() + 60), name: "Fronleichnam"} ,
+            { date: new Date (date.getFullYear(), 9, 3), name: "Tag der Deutschen Einheit"},
+            { date: new Date (date.getFullYear(), 11, 25), name: "1. Weihnachtsfeiertag"},
+            { date: new Date (date.getFullYear(), 11, 26), name: "2. Weihnachtsfeiertag"},  
+            { date: new Date (date.getFullYear(), 7, 31), name: "Test Datum"}
     
                         ];  
 
@@ -175,7 +175,7 @@ function calenderSheet () {
             
 
             for (let i=0; i< feiertagen.length; i++){
-                if( localDate.getTime() == feiertagen[i].date.getTime()){
+                if( localDate.getDate() == feiertagen[i].date.getDate() && localDate.getMonth() == feiertagen[i].date.getUTCMonth() && localDate.getFullYear() == feiertagen[i].date.getFullYear()){
                 
                     document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
                 
