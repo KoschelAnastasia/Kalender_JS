@@ -411,5 +411,48 @@ function calenderSheet () {
     
 }
 
+// function parsUrl (url) {
+    
+
+    // Url prufen
+    //  console.log("Information: ", url);
+
+    // Information Satz die wir auf die Seite bekommen bis information von Wikipedia wird hochgeladen
+    // document.getElementById("Nachricht").textContent = "Historische Ereignisse des Tages wird in Kürze von Wikipedia hochgeladen. Versprochen ;)";
+
+    // Eine Metode, die eine  HTTP-Anfrage an die angegebene URL ausführt, um Daten abzurufen
+    // fetch(url)
+
+    // Diese Teil von Code  verarbeitet Antwort von Server. Metode .then wird benutzt um "Aktionen" nach einer ervolgreichen "Antwort" durchzufüren
+    // .then ((response) => {
+
+    // "Antwort" von Server wird in Text konvertiert, damit wir weiter bearbeiten könnnen 
+    //     return response.text();
+    // })
+
+    // 
+
+    // Diese Teil von Code arbeitet mit unsere HTML und wird benutzt um geladene Information von Wikiseite zu bearbeiten
+    // .then((html){
+
+        //diese Konstante bekommt ein link auf ein Element mit WikiDatei Indifikator. wikiDatei ist ein Element, der sich in
+        //Kalender mit Historische Ereignisse befindet (bei mir in HTML schau auf Zeile: 63)
+        // const wikipediaDateiDiv = document.getElementById ("wikiDatei");
+
+        //Ein Objekt DOMParser wird erstellt, der wird uns helfen den empfangenen HTML-code zu analysieren 
+        // let parser = new DOMParser();
+
+        // Mit Hilfe von DOMParser, HTML-code wird in eine DOM-Struktur (Document Object Model) konvertiert
+        // let doc =parser.parseFromString(html, `text/html`);
+
+        
+        //remove from Wiki HTML images
+        // let images = doc.querySelectorAll('figure');
+        // images.forEach(figure => figure.parentNode.removeChild(figure)); 
+
+        // let logo = doc.querySelectorAll('img');
+        // logo.forEach(img => img.parentNode.removeChild(img));
+    // })
+// }
 
 
