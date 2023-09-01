@@ -145,15 +145,6 @@ h2 {
     
 }
 
-
-/* .title {
-    color: #581845;
-    font-size: 30pt;
-    font-family: Trebuchet MS;
-    text-align: center;
-} */
-
-
 /* Stil für Tagen in die Kalender. Von oben nach Unten: Begrenzungs Farbe; Begrenzungs Stil; Rundung die Begrenzungs
 Ecken; Hintergrundfarbe; Höhe und Breite; Schriftfarbe; Schriftgroße; Schriftstil; Versetzung einen flexiblen Container-Modus, 
 der das Flexbox-Layout verwendet; justify-content ist ein Mittel, der hilft horizontale Ausrichtung von Elementen innerhalb eines 
@@ -339,10 +330,13 @@ display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen
     grid-template-columns: 2fr 2fr 4fr;
 } */
 
+/* Hintergrundfarbe für aktueles Tag */
 .today {
     background-color:rgb(20, 171, 177);;
 
 }
+
+/* Hintergrundfarbe für Feiertag */
 
 .feiertag{
     background-color: red;
@@ -375,19 +369,19 @@ Bildschirm hat 3 Columns (die mithilfe von grid-template-columns bestimte Breite
                     }
 
     
-    
-    .kalenderblatt {
-        margin: 40px 0px 40px -7px; 
-        padding: 5pt;
+    /* Posizionirung und Stil von Kalenderblatt. Von oben nach unten: Einzugen von alle Seiten in pixil; Untere Einzug ist auto; Rechte Einzug in points; Einzug innerhalb des Elementes in pixel*/
+    /* .kalenderblatt {
+       
         height: 400px;
         width: 440px;
         margin-left: 2pt;
         margin-top: 30pt;
         margin-right: 2pt;
-                }
+                } */
     
     
-    
+    /*Überschrifte "Kalender von" und "Fotos". Von oben nach unten: Schriftgroße; Schriftstil; Zentrirung des Texstes
+    Rundung von Ecken, Breite in points; */
     h1 {
         font-size: 30pt;
         font-family: Trebuchet MS;
@@ -397,9 +391,10 @@ Bildschirm hat 3 Columns (die mithilfe von grid-template-columns bestimte Breite
         }
     
     
-    
+    /*Stil für Begrenzung des Kalenders. Von oben nach unten: Einzug innerhalb des Elementes; Höhe automatisch; 
+    Breite in points; Obere, linke und rechte Einzug des Elements; */
     .borderKalendar {
-        margin: 40px 0px 40px -7px; 
+        
         padding: 5pt;
         height: auto;
         width: 300pt;
@@ -409,29 +404,32 @@ Bildschirm hat 3 Columns (die mithilfe von grid-template-columns bestimte Breite
                     }
     
     
-    
+    /* Kallenderblatt Einzug: links und rechts */
     .kalenderblatt{
         padding-left: 3px;
         padding-right: 6pt;
                     }
-
+    
+    /* Breite in points und auto Höhe für Information Text Bereich */
     #infotext {
         width: 300pt;
         height: auto;
-        /* margin: 40px 2px 40px 2px; */
+
                 }
 
 
-
+    /* Breite in points und auto Höhe für Geschichte Bereich */
     #geschichte {
         width: 300pt;
         height: auto;
-        /* margin: 40px 2px 40px 2px; */
+        
                 }
+    
+    /* Breite in points und auto Höhe für Foto Bereich */
     #foto{
-        width: 315pt;
+        width: 300pt;
         height: auto;
-        /* margin: 40px 2px 40px 2px; */
+
             }
 }
 
