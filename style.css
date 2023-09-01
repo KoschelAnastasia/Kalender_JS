@@ -279,6 +279,14 @@ p {
 /*Schriftfarbe für Wochenende (Zahlen) in die Kalender  */
 .weekend {
     color: rgb(25, 124, 128);
+    /* color: rgb(61, 199, 192); */
+    /* background-color: rgb(57, 150, 153); */
+    /* background-color: rgb(80, 192, 196); */
+    /* background-color: rgb(76, 190, 194); */
+    /* background-color: rgb(91, 194, 197); */
+    /* background-color: rgb(87, 193, 197); */
+    /* background-color: rgb(41, 151, 241); */
+    /* color: white; */
 }
 
 /* Stil für Wochentage (Mo,Do usw). Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat, "1fr" bedeutet 
@@ -332,15 +340,21 @@ display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen
 
 /* Hintergrundfarbe für aktueles Tag */
 .today {
-    background-color:rgb(20, 171, 177);;
-
+    background-color: rgb(20, 171, 177);
+    color:white;
+    
 }
-
-/* Hintergrundfarbe für Feiertag */
 
 .feiertag{
-    background-color: red;
+    /* color: rgb(0, 85, 124); */
+    /* color: rgb(169, 233, 253); */
+    /* color: rgb(158, 222, 241); */
+    /* color: rgb(94, 197, 228); */
+    color: rgb(196, 77, 77);
+    /* color: rgb(113, 222, 255); */
 }
+/* Hintergrundfarbe für Feiertag */
+
 
 
 

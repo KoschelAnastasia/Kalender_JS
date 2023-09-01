@@ -13,6 +13,8 @@ let dateD = date.getDate();
 let monthD = date.getMonth ();
 let year = date.getFullYear ();
 let weekdayD = date.getDay ();
+let feiertagen;
+
 
 
 
@@ -151,7 +153,7 @@ function calenderSheet () {
 
         let localDate = new Date (date.getFullYear(), date.getMonth(), date.getDate());    
 
-        let feiertagen = [
+        feiertagen = [
             { date: new Date (date.getFullYear(), 8, 1), name: "Test Datum"},
             { date: new Date (date.getFullYear(), 0, 1), name: "Neujahrstag" },
             { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
@@ -191,6 +193,7 @@ function calenderSheet () {
                     
                     document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
                     
+
                     tagCell.classList.add(`feiertag`);
                     break;                
                 }
@@ -304,10 +307,22 @@ function calenderSheet () {
                 überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date); 
             })
 
+            for (let i=0; i< feiertagen.length; i++){
+
+                let result = null;                
+
+                if( day.getDate() == feiertagen[i].date.getDate() && day.getMonth() == feiertagen[i].date.getMonth() && day.getFullYear() == feiertagen[i].date.getFullYear()){
+                    
+
+                    result = feiertagen[i];                   
+
+                    tagCell.classList.add(`feiertag`);
+                    break;                
+                }
+
+            }
         
-        }
-        
-        
+        }    
         
         //Eine Schleife die Zahlen des nächstes Monats definiert
         for (let i = 1; i <= 7 - lastDayOfWeek; i++) {
@@ -320,23 +335,6 @@ function calenderSheet () {
             
             
         }
-        
-        
-        
-        
-        
-        
-        // for (let i=0; i< feiertagen.length; i++){
-            
-            
-            
-        //     calenderBody.appendChild(tagCell);
-        //         if( date.getTime() == feiertagen[i].date.getTime()){
-                
-        //         tagCell.classList.add(`feiertag`);
-        //         }
-                
-        //     }
         
                     
         }
@@ -396,19 +394,19 @@ function calenderSheet () {
     buttonLinksMonat.addEventListener("click", function (){
         console.log(date);
         date.setMonth(date.getMonth() -1);
-        calenderRender (date);    
+        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);    
     });
     buttonRechtsMonat.addEventListener ("click", function (){
         date.setMonth(date.getMonth() +1);
-        calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
     });
     buttonLinksJahr.addEventListener("click", function(){
         date.setFullYear(date.getFullYear() - 1);
-        calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
     });
     buttonRechtsJahr.addEventListener ("click", function(){
         date.setFullYear(date.getFullYear() +1);
-        calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
     });
     
 }
