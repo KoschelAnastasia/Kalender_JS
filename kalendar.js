@@ -152,7 +152,7 @@ function calenderSheet () {
         let localDate = new Date (date.getFullYear(), date.getMonth(), date.getDate());    
 
         let feiertagen = [
-            { date: new Date (date.getFullYear(), 7, 31), name: "Test Datum"},
+            { date: new Date (date.getFullYear(), 8, 1), name: "Test Datum"},
             { date: new Date (date.getFullYear(), 0, 1), name: "Neujahrstag" },
             { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate() -2), name: "Karfreitag"},
             { date: new Date (date.getFullYear(), osternDatum.getMonth(), osternDatum.getDate()), name: "Ostersonntag" },
@@ -174,50 +174,47 @@ function calenderSheet () {
             console.log(`Und das ist: ` + feiertagen[12].name);
 
 
-            function nameDate(date){
+            for (let i=0; i< feiertagen.length; i++){
 
-                let feiertagName = feiertagen.find(item => item.date == date);
-                return feiertagName ? feiertagName.name :"keine feiertag";
-
-            }
-            
-            let nameDateArray=nameDate(localDate);
-            console.log("feiertag Name " + nameDateArray);
-
-            
-
-            
-
-        //     for (let i=0; i< feiertagen.length; i++){
-        //         if( localDate.getDate() == feiertagen[i].date.getDate() && localDate.getMonth() == feiertagen[i].date.getMonth() && localDate.getFullYear() == feiertagen[i].date.getFullYear()){
-
-        //             let feiertagName = feiertagen[i].name;
-        //             console.log("i= "+ i);
-
-
-        //             console.log("feiertag Name " + feiertagName);
+                let result = null;
+                const tagCell = tagCellCreator();
+                calenderBody.appendChild(tagCell);
                 
-        //             document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
-                
-        //         }
+
+                if( localDate.getDate() == feiertagen[i].date.getDate() && localDate.getMonth() == feiertagen[i].date.getMonth() && localDate.getFullYear() == feiertagen[i].date.getFullYear()){
+                    
+
+                    result = feiertagen[i];
+                    
+
+                    console.log("feiertag Name " + feiertagen[i].name);
+                    
+                    document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
+                    
+                    tagCell.classList.add(`feiertag`);
+                    break;                
+                }
+
             
-            
-        //         else{
-        //             document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich nicht um einen gesetzlichen Feiertag`;
-        //         } 
-        // }
+                else{
+                    document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich nicht um einen gesetzlichen Feiertag`;
+                } 
+        }
         }       
+        calenderRender()
     } 
     
     calenderRender ()
     
     //Render Funktion    
-    function  calenderRender ( feiertagen) {
+    function  calenderRender () {
+        
+
         
         let dateD = date.getDate();
         let monthD = date.getMonth();
         let year = date.getFullYear ();
-        
+        localDate = new Date (date.getFullYear(), date.getMonth(), date.getDate());
         
         
         //Erste und letzte Tag des Monats in Kalendar Kopf werden richtig geschrieben   
@@ -306,6 +303,8 @@ function calenderSheet () {
 
                 überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date); 
             })
+
+        
         }
         
         
@@ -317,11 +316,14 @@ function calenderSheet () {
             nextMonthDay.setDate(i);
             const emptyCell = tagCellCreator(nextMonthDay, `otherMonth`);
             calenderBody.appendChild(emptyCell);
-
+            
             
             
         }
-
+        
+        
+        
+        
         
         
         // for (let i=0; i< feiertagen.length; i++){
