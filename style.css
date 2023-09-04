@@ -314,9 +314,6 @@ display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen
     display: grid;
     padding: 10pt 20pt 10pt 20pt;
 
-/* Stil für Wochentagen. Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
-display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen; Obere Begrenzung (Breite in pixel, Stil und Farbe) */
-    
 }
 
 /* Stil für Wochentagen. Von oben nach unten: Verteilung alle Elemente in "Tabele" die 7 schpalte hat; 
@@ -338,13 +335,14 @@ display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen
     grid-template-columns: 2fr 2fr 4fr;
 } */
 
-/* Hintergrundfarbe für aktueles Tag */
+/* Hintergrundfarbe und Schriftfarbe für aktueles Tag */
 .today {
     background-color: rgb(20, 171, 177);
     color:white;
     
 }
 
+/* Farbe für Feiertagen */
 .feiertag{
     /* color: rgb(0, 85, 124); */
     /* color: rgb(169, 233, 253); */
@@ -353,7 +351,7 @@ display: grid wird verwendet, um eine Raster (grid) von Elementen zu erschtellen
     color: rgb(196, 77, 77);
     /* color: rgb(113, 222, 255); */
 }
-/* Hintergrundfarbe für Feiertag */
+
 
 
 

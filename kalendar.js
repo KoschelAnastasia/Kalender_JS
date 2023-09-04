@@ -6,8 +6,7 @@ window.onload= function() {
     calenderSheet ();
 }
 
-//Variablen für überschrift
-//Variablen für infoText
+//Globale Variablen 
 let date= new Date ();
 let dateD = date.getDate();
 let monthD = date.getMonth ();
@@ -140,19 +139,21 @@ function calenderSheet () {
     
         // Ostern feiert man immer am Sonntag. Diese Formel berechnet es
         const dateOstern = ((h + l - 7 * m + 114) % 31) + 1;
-    
+        
+        // Die Datum von Osternsonntag
         let osternDatum = new Date(date.getFullYear(), monthOstern, dateOstern);
     
         console.log(`Der Datum von Osternsonntag: ` + osternDatum);
     
-    
-    
-    calcHessenFerien ()
-    
+        // Aufruf Feiertagerechnung Funktion
+        calcHessenFerien ()
+        
+    // Funktion, die alle Feiertagen in Hessen deviniert oder berechnet 
     function calcHessenFerien () {
 
         let localDate = new Date (date.getFullYear(), date.getMonth(), date.getDate());    
 
+        // Feiertagen Arrey
         feiertagen = [
             { date: new Date (date.getFullYear(), 8, 1), name: "Test Datum"},
             { date: new Date (date.getFullYear(), 0, 1), name: "Neujahrstag" },
@@ -170,18 +171,17 @@ function calenderSheet () {
     
                         ];  
 
-            console.log(`Es ist ist: ` + feiertagen[6].date);
-            console.log(`Und das ist: ` + feiertagen[6].name);
-            console.log(`Es ist ist: ` + feiertagen[12].date);
-            console.log(`Und das ist: ` + feiertagen[12].name);
+            // Consol.log um zu Prufen ob alles richtig ist
+            console.log(`Es ist ist: ` + feiertagen[4].date);
+            console.log(`Und das ist: ` + feiertagen[4].name);
+            console.log(`Es ist ist: ` + feiertagen[7].date);
+            console.log(`Und das ist: ` + feiertagen[7].name);
 
-
+            // Schleife, die durch Arrey geht und pruft, ob Heute ein Feiertag ist. Wenn das wahr ist, dann in Information wird 
+            //"Es handelt sich um *Name der Feiertags* einen gesetzlichen Feiertag" stehen. Wenn falsch, dann "Es handelt sich nicht um einen gesetzlichen Feiertag"
             for (let i=0; i< feiertagen.length; i++){
 
-                let result = null;
-                const tagCell = tagCellCreator();
-                calenderBody.appendChild(tagCell);
-                
+                let result = null;                
 
                 if( localDate.getDate() == feiertagen[i].date.getDate() && localDate.getMonth() == feiertagen[i].date.getMonth() && localDate.getFullYear() == feiertagen[i].date.getFullYear()){
                     
@@ -194,7 +194,7 @@ function calenderSheet () {
                     document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich um ${feiertagen[i].name} einen gesetzlichen Feiertag`;
                     
 
-                    tagCell.classList.add(`feiertag`);
+                    
                     break;                
                 }
 
@@ -203,17 +203,20 @@ function calenderSheet () {
                     document.getElementById(`infoHoliday`).innerHTML = `Es handelt sich nicht um einen gesetzlichen Feiertag`;
                 } 
         }
-        }       
+        }   
+        
+        // die Kalendar wird neu aufgebaut
         calenderRender()
     } 
     
+    // Aufruf den Funktion, die Kalender rendert
     calenderRender ()
     
     //Render Funktion    
     function  calenderRender () {
         
 
-        
+        // lockal Variablen
         let dateD = date.getDate();
         let monthD = date.getMonth();
         let year = date.getFullYear ();
@@ -290,7 +293,7 @@ function calenderSheet () {
             
             calenderBody.appendChild(tagCell);
             
-            
+            // Schleife die sucht heutigen Tag und giebt ein Klass
             if (dateD == tag && monthD == date.getMonth() && year == date.getFullYear()){
                 
                 
@@ -298,6 +301,7 @@ function calenderSheet () {
                 
             }
 
+            // Schleife, die ermöglicht die Nutzer den Tag in die Kalender wahlen auf "click"
             tagCell.addEventListener ("click", function(){
             
                 date = new Date (date.getFullYear(), date.getMonth(), tag);
@@ -307,6 +311,9 @@ function calenderSheet () {
                 überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date); 
             })
 
+            // Scleife, die Feiertagen des Monats sucht und die ein Klass gibt. Die Schleife hatte frühe nicht funktionirt.
+            //Es pasirte wegen "sichtbarkeit" Problem. Den feiertag Arrey war in eine andere Funktion was sie unsichtbar für diese machte.
+            // Damit sie sichtbar wird, müsste ich ganz oben die "lehre" Variable feiertagen divenieren
             for (let i=0; i< feiertagen.length; i++){
 
                 let result = null;                
@@ -341,7 +348,7 @@ function calenderSheet () {
       
     
     
-    //Funktion, die "tag" Zelle erstellt
+    //Funktion, die Zelle erstellt
 
     function tagCellCreator (day, otherMonth, today, feiertag) {
         
@@ -394,19 +401,19 @@ function calenderSheet () {
     buttonLinksMonat.addEventListener("click", function (){
         console.log(date);
         date.setMonth(date.getMonth() -1);
-        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);    
+        überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date);    
     });
     buttonRechtsMonat.addEventListener ("click", function (){
         date.setMonth(date.getMonth() +1);
-        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date);
     });
     buttonLinksJahr.addEventListener("click", function(){
         date.setFullYear(date.getFullYear() - 1);
-        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date);
     });
     buttonRechtsJahr.addEventListener ("click", function(){
         date.setFullYear(date.getFullYear() +1);
-        überschrift(); kalendarInfotext(); wIMonth ();calcOsternDatum();calenderRender (date);
+        überschrift(); kalendarInfotext(); wIMonth (); calcOsternDatum(); calenderRender (date);
     });
     
 }
